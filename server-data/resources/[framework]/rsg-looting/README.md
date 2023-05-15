@@ -1,0 +1,2 @@
+# rsg-looting
+ 

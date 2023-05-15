@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+.container {
+    font-family: 'Source Sans Pro', monospace;
+}
+ 
+.spawn-locations {
+    text-transform: uppercase;
+    position: absolute;
+    min-width: 30vh;
+    width: fit-content;
+    max-width: 35vh;
+    top: 10vh;
+    left: 10vh;
+    background-color: #161923f2;
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+    border-radius: .8vh;
+    padding: 30px;
+    cursor: default;
+    transition: 300ms;
+}
+
+.location {
+    width: 100%;
+    margin-bottom: 15px;
+    transition: 200ms;
+    border-radius: .3vh;
+    cursor: pointer;
+}
+
+.location > p {
+    position: relative;
+    color: white;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 1.4vh;
+}
+
+.location:hover {
+    background-color: #a90d2ca6!important;
+    transition: 300ms;
+}
+
+.selected {
+    background-color: #a90d2ca6!important;
+}
+
+.submit-spawn {
+    background-color: rgb(47 134 67)!important;
+    width: 100%;
+    margin-top: 1.5vh;
+    transition: 0.2s;
+    border-radius: .3vh;
+    cursor: pointer;
+}
+
+.submit-spawn > p {
+    position: relative;
+    color: white;
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 13px;
+    font-family: 'Lato';
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.submit-spawn:hover {
+    background-color: rgba(32, 158, 16, 0.85);
+    transition: 0.2s;
+}
+
+#spawn-label {
+    font-weight: bold;
+}
+
+.loclabel {
+    width: 28vh;
+    height: 4.5vh;
+    margin-bottom: .75vh;
+    transition: 0.2s;
+}
+
+.loclabel > p {
+    font-family: 'Lato';
+    letter-spacing: 1px;
+    font-weight: bold;
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 4.5vh;
+    font-size: 13px;
+}

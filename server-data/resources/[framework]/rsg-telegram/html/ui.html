@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta
+        charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Telegram Letters</title>
+    <link
+        rel="stylesheet"
+        href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous">
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <div class="inbox">
+        <div class="header">
+           <div><h1 class="postoffice">Telegram Letters</h1></div>
+        </div>
+        <div class="inboxContainer">
+            <ul id="inboxList"></ul>
+        </div>
+        <button class="btn closePostoffice">Close Telegram Letters</button>
+    </div>
+
+    <div class="view">
+        <a href="#" class="close_view">X</a>
+        <div class="telegram_header">
+            <div class="telegram_info">
+                <div>
+                    <b>Sender:</b> <span id="view_sendername"></span>
+                </div>
+                <div>
+                    <b>Recipient:</b> <span id="view_recipient"></span>
+                </div>
+                <div>
+                    <b>Date:</b> <span id="view_date"></span>
+                </div>
+            </div>
+        </div>
+        <div class="telegram_subject">
+            <b>Subject:</b> <span id="view_subject"></span>
+        </div>
+        <br>
+        <div class="telegram_message"> 
+            <b>Message:</b> <span id="view_message"></span>
+        </div>
+        <br>
+        <div class="telegram_footer">
+            <button class="telegram_delete_button">Delete</button>
+        </div>
+    </div>
+
+    <script
+        src="script.js">
+    </script>
+</body>
+</html>

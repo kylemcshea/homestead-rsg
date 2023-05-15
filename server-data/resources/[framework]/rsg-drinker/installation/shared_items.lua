@@ -1,0 +1,5 @@
+	-- items
+	['moonshine']	= {['name'] = 'moonshine',	['label'] = 'Moonshine',	['weight'] = 100,	['type'] = 'item',	['image'] = 'moonshine.png',	['unique'] = false,	['useable'] = true,	['shouldClose'] = true,	['combinable'] = nil,	['level'] = 0,	['description'] = 'best moonshine in town'},
+	['beer']		= {['name'] = 'beer',		['label'] = 'Beer',			['weight'] = 500,	['type'] = 'item',	['image'] = 'beer.png',			['unique'] = false,	['useable'] = true,	['shouldClose'] = true,	['combinable'] = nil, 	['level'] = 0,	['description'] = 'bottle of beer'},
+	['whiskey']		= {['name'] = 'whiskey',	['label'] = 'Whiskey',		['weight'] = 500,	['type'] = 'item',	['image'] = 'whiskey.png',		['unique'] = false,	['useable'] = true,	['shouldClose'] = true,	['combinable'] = nil, 	['level'] = 0,	['description'] = 'bottle of whiskey'},
+	['coffee']		= {['name'] = 'coffee',		['label'] = 'Coffee',		['weight'] = 500,	['type'] = 'item',	['image'] = 'coffee.png',		['unique'] = false,	['useable'] = true,	['shouldClose'] = true,	['combinable'] = nil, 	['level'] = 0,	['description'] = 'cup of coffee'},

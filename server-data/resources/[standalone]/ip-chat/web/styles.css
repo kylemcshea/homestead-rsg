@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+* {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+#app {
+    font-family: 'Tajawal', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    background-color: transparent;
+}
+
+.chat-window {
+    position: absolute;
+    top: 1%;
+    left: 12px;
+    width: 38%;
+    height: 530px;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-animation-duration: 2s;
+}
+
+.chat-messages {
+    max-height: 85%;
+    font-size: 1.0rem;
+    overflow: hidden;
+    word-break: break-word;
+    box-sizing: border-box;
+    display: block;
+}
+
+.chat-input {
+    font-size: 1.65vh;
+    position: absolute;
+    top: 245px;
+    left: 12px;
+    width: 38%;
+    max-width: 20.8%;
+    box-sizing: border-box;
+}
+
+.prefix {
+    position: absolute;
+    margin-top: 4.2%;
+    margin-left: 2%;
+    left: 0.208%;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+input {
+    font-size: 1.1rem;
+    display: block;
+    box-sizing: border-box;
+    padding-top: 1.6%;
+    padding-left: 10%;
+    padding-bottom: 1.4%;
+    padding-right: 1.6%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(27, 29, 32, 0.95);
+    width: 100%;
+    border: none;
+    height: 50px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    resize: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+}
+
+input:focus {
+    outline: none;
+}
+
+.msg {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: normal;
+    vertical-align: baseline;
+    padding-right: 11px;
+    line-height: 1;
+    font-size: calc(2.7vh);
+}
+
+.suggestions {
+    margin-top: 5px;
+    list-style-type: none;
+    padding: 5px;
+    padding-left: 27px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    color: white;
+    background-color: rgba(11, 71, 138, 0.9);
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+}
+
+.help {
+    margin-top: -10px;
+    color: #b0bbbd;
+}
+
+.suggestion {
+    margin-bottom: 0.5px;
+}
+
+.chat-message {
+    display: block !important;
+    padding: 0.6vw;
+    padding-top: 0.6vw;
+    padding-bottom: 0.7vw;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+}
+
+/* START STAFF */
+
+.staff {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(19, 138, 70, 0.9) 100%);
+}
+
+.fa-shield-alt {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #1ebc62;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END STAFF */
+
+/* START ONLY STAFF */
+
+.staffonly {
+    background: rgba(42, 42, 42, 0.9);
+}
+
+.fa-eye-slash {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #1ebc62;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END ONLY STAFF */
+
+/* START TWITCH */
+
+.twitch {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(96, 67, 139, 0.9) 100%);
+}
+
+.fa-twitch {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #9c70de;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END TWITCH */
+
+/* START YOUTUBE */
+
+.report {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(101, 0, 0, 0.9) 100%);
+}
+
+.fa-flag {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #ff0000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END YOUTUBE */
+
+/* START TWITTER */
+
+.twitter {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(25, 107, 143, 0.9) 100%);
+}
+
+.fa-twitter {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #2aa9e0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END TWITTER */
+
+/* START SYSTEM */
+
+.system {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(134, 84, 23, 0.9) 100%);
+}
+
+.fa-cog {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #df7b00;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END SYSTEM */
+
+/* START ADVERTISEMENT */
+
+.advertisement {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(84, 150, 38, 0.9) 100%);
+}
+
+.fa-ad {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #81db44;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END ADVERTISEMENT */
+
+/* START POLICE */
+
+.police {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(40, 55, 116, 0.9) 100%);
+}
+
+.fa-bullhorn {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #4a6cfd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END POLICE */
+
+/* START AMBULANCE */
+
+.ambulance {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(152, 113, 22, 0.9) 100%);
+}
+
+.fa-ambulance {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #e3a71b;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END AMBULANCE */
+
+/* START OOC */
+
+.ooc {
+    background: linear-gradient(90deg, rgba(194, 194, 194, 0.9) 0%, rgba(194, 194, 194, 0.9) 100%);
+}
+
+.fa-door-open {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #ababab;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* END OOC */
+
+.gossip {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(12, 12, 11, 0.9) 100%);
+}
+
+.fa-cog {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #df7b00;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.valentine {
+    background: linear-gradient(90deg, rgba(160, 159, 159, 0.9) 0%, rgba(109, 106, 106, 0.9) 100%);
+}
+
+.rhodes {
+    background: linear-gradient(90deg, rgba(0, 128, 160, 0.9) 0%, rgba(37, 56, 224, 0.9) 100%);
+}
+
+.blackwater {
+    background: linear-gradient(90deg, rgba(204, 131, 48, 0.9) 0%, rgba(22, 21, 21, 0.9) 100%);
+}
+
+.strawberry {
+    background: linear-gradient(90deg, rgba(241, 79, 79, 0.9) 0%, rgba(109, 3, 3, 0.9) 100%);
+}
+
+.saintdenis {
+    background: linear-gradient(90deg, rgba(4, 83, 31, 0.9) 0%, rgba(74, 236, 141, 0.9) 100%);
+}

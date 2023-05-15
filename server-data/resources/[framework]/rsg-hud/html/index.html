@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div id="main-container">
+        <div id="money-container">
+            <div id="money-cash">
+                <transition name="slide-fade">
+            <p v-if="showCash"><span id="sign">$&nbsp;</span><span id="money">{{(cash)}}</span></p>
+                </transition>
+            </div>
+            <div id="money-bloodmoney">
+                <transition name="slide-fade">
+            <p v-if="showBloodmoney"><span id="sign">$&nbsp;</span><span id="bloodmoney">{{(bloodmoney)}}</span></p>
+                </transition>
+            </div>
+            <div id="money-bank">
+                <transition name="slide-fade">
+            <p v-if="showBank"><span id="sign">$&nbsp;</span><span id="bank">{{(bank)}}</span></p>
+                </transition>
+            </div>
+            <div id="money-change" v-if="showUpdate">
+        <p v-if="plus" id="money"><span id="plus">+&nbsp;</span><span id="money">{{(amount)}}</span></p>
+                <p v-else-if="minus" id="minus"><span id="minus">-&nbsp;</span><span id="money">{{(amount)}}</span></p>
+            </div>
+        </div>
+        <span>
+            <div id="ui-container">
+                <div id="playerHud" v-show="show">
+                    <transition name="fade">
+                    <div v-if="showVoice">
+                        <q-circular-progress show-value :value="voice" size="50px" :thickness="0.22" color="white" track-color="black-9" center-color="gray-10" :min="0" :max="100">
+                        <q-circular-progress show-value :value="voice" size="50px" :thickness="0.24" :style="{color: talkingColor}" :min="0" :max="6" center-color="grey-10">
+                        <q-icon name="fas fa-microphone" size="19.5px" :style="{color: talkingColor}" />
+                    </div>
+                    </transition>
+                    <div v-if="showHealth">
+                        <q-circular-progress class="progress" show-value :value="health" size="50px" :thickness="0.22" color="green" track-color="black-9" center-color="gray-10">
+                            <q-icon name="fas fa-heartbeat" size="19px" :style="{color: showHealthColor}" />
+                    </div>
+                    <div v-if="showHunger">
+                        <q-circular-progress class="progress" show-value :value="hunger" size="50px" :thickness="0.22" color="orange" track-color="black-9" center-color="gray-10">
+                            <q-icon name="fas fa-apple-alt" size="19px" :style="{color: showHungerColor}" />
+                    </div>
+                    <div v-if="showThirst">
+                        <q-circular-progress class="progress" show-value :value="thirst" size="50px" :thickness="0.22" color="blue" track-color="black-9" center-color="gray-10">
+                            <q-icon name="fas fa-tint" size="19px" :style="{color: showThirstColor}" />
+                    </div>
+                    <div v-if="showStress">
+                        <q-circular-progress class="progress" show-value :value="stress" size="50px" :thickness="0.22" color="red" track-color="black-9" center-color="gray-10">
+                            <q-icon name="fas fa-brain" size="19px" color="white" />
+                    </div>
+                    <div v-if="showYouHaveMail">
+                        <q-circular-progress class="progress" show-value :value="youhavemail" size="50px" :thickness="0.22" color="black" track-color="black-9" center-color="gray-10">
+                            <q-icon name="far fa-envelope" size="19px" :style="{color: showYouHaveMailColor}" />
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</body>
+
+</html>

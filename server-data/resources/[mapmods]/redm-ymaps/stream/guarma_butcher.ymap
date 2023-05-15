@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<CMapData>
+	<flags value="2"/>
+	<contentFlags value="65"/>
+	<streamingExtentsMin x="844.410889" y="-7445.480957" z="-359.255177"/>
+	<streamingExtentsMax x="1649.570313" y="-6641.291016" z="443.185795"/>
+	<entitiesExtentsMin x="1244.410889" y="-7045.480957" z="40.744823"/>
+	<entitiesExtentsMax x="1249.570313" y="-7041.291016" z="43.185795"/>
+	<entities>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.894653" y="-7045.194824" z="41.934864"/>
+			<rotation w="0.775889" x="0.000000" y="-0.000000" z="-0.630869"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.809937" y="-7045.126465" z="41.934864"/>
+			<rotation w="0.983678" x="-0.000000" y="0.000000" z="0.179937"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.905884" y="-7045.155762" z="41.934864"/>
+			<rotation w="0.775889" x="0.000000" y="-0.000000" z="-0.630869"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_lantern04x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1249.469604" y="-7045.225098" z="41.709888"/>
+			<rotation w="0.854437" x="0.000000" y="-0.000000" z="-0.519555"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.771851" y="-7045.114746" z="41.934864"/>
+			<rotation w="0.983678" x="-0.000000" y="0.000000" z="0.179937"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>s_wrappedsausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.819946" y="-7044.999512" z="41.985317"/>
+			<rotation w="0.926439" x="-0.000000" y="0.000000" z="0.376444"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_lantern04x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1244.410889" y="-7042.958496" z="41.592125"/>
+			<rotation w="0.999403" x="0.000000" y="-0.000000" z="-0.034540"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_sto_sausages01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.961548" y="-7042.489258" z="43.185795"/>
+			<rotation w="0.645481" x="-0.000000" y="0.000000" z="0.763776"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_sto_sausages01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.425903" y="-7045.070801" z="43.185795"/>
+			<rotation w="0.565966" x="-0.000000" y="0.000000" z="0.824429"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_crategroup06x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.428589" y="-7045.360352" z="40.799698"/>
+			<rotation w="0.456501" x="-0.000000" y="0.000000" z="0.889723"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp006_p_crate01x_nobrand</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.320801" y="-7045.309570" z="40.821033"/>
+			<rotation w="0.941725" x="-0.000000" y="0.000000" z="0.336383"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp006_p_crate01x_nobrand</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.823730" y="-7044.909668" z="40.805019"/>
+			<rotation w="0.941911" x="-0.000000" y="0.000000" z="0.335864"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_crategroup07x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.109619" y="-7045.480957" z="41.252750"/>
+			<rotation w="0.820845" x="0.000000" y="-0.000000" z="-0.571151"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_tarpbutcher01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.926636" y="-7043.587402" z="40.829239"/>
+			<rotation w="0.792553" x="0.000000" y="-0.000000" z="-0.609803"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp006_p_crate01x_nobrand</archetypeName>
+			<flags value="1572897"/>
+			<position x="1249.331055" y="-7045.113770" z="40.864658"/>
+			<rotation w="0.549545" x="-0.000000" y="0.000000" z="0.835464"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_crateset02x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1245.366333" y="-7043.808594" z="40.758656"/>
+			<rotation w="0.591623" x="0.000000" y="-0.000000" z="-0.806215"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_s_posse_foldingchair_01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1245.899780" y="-7042.836914" z="40.773701"/>
+			<rotation w="0.858123" x="0.000000" y="-0.000000" z="-0.513443"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_sto_butcherknife01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1249.236328" y="-7044.589355" z="41.685574"/>
+			<rotation w="0.594352" x="-0.016569" y="-0.020560" z="-0.803772"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.917114" y="-7045.116699" z="41.934864"/>
+			<rotation w="0.775889" x="0.000000" y="-0.000000" z="-0.630869"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>s_wrappedsausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.024536" y="-7044.891602" z="41.935452"/>
+			<rotation w="0.919722" x="0.000000" y="-0.000000" z="-0.392570"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.954712" y="-7045.021973" z="41.934864"/>
+			<rotation w="0.991445" x="-0.000000" y="0.000000" z="0.130524"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.011841" y="-7045.039551" z="41.934864"/>
+			<rotation w="0.991445" x="-0.000000" y="0.000000" z="0.130524"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_veh_pg_vl_butcher01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1248.822876" y="-7041.291016" z="40.744823"/>
+			<rotation w="0.606069" x="-0.000000" y="0.000000" z="0.795412"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_boxcar_cratecover05</archetypeName>
+			<flags value="1572897"/>
+			<position x="1245.745728" y="-7041.458496" z="40.795277"/>
+			<rotation w="0.924612" x="0.000000" y="-0.000000" z="-0.380910"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.992798" y="-7045.033691" z="41.934864"/>
+			<rotation w="0.991445" x="-0.000000" y="0.000000" z="0.130524"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp006_p_crate01x_nobrand</archetypeName>
+			<flags value="1572897"/>
+			<position x="1249.325562" y="-7045.122070" z="41.294586"/>
+			<rotation w="0.550004" x="-0.000000" y="0.000000" z="0.835162"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_s_posse_butcher04x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1249.570313" y="-7043.994629" z="40.885288"/>
+			<rotation w="0.967612" x="-0.000000" y="0.000000" z="0.252441"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>p_cs_sausage01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1247.926147" y="-7045.013184" z="41.934864"/>
+			<rotation w="0.991445" x="-0.000000" y="0.000000" z="0.130524"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="500"/>
+			<childLodDist value="500"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+	</entities>
+</CMapData>

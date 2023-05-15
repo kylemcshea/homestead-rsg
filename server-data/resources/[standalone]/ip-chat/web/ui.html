@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <link href="animate.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet"></link>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script type="text/x-template" id="app_template">
+            <div id="app">
+                <div class="chat-window" :style="this.style" :class="{ 'fadeOutUp animated': !showWindow, 'hidden': shouldHide }">
+                    <div class="chat-messages" ref="messages">
+                        <message v-for="msg in messages"
+                            :templates="templates"
+                            :multiline="msg.multiline"
+                            :args="msg.args"
+                            :color="msg.color"
+                            :template="msg.template"
+                            :template-id="msg.templateId"
+                            :key="msg">
+                        </message>
+                    </div>
+                </div>
+                <div class="chat-input" v-show="showInput">
+                    <div>
+                        <span class="prefix"><i class="fas fa-paper-plane fa-lg"></i></span>
+                        <input v-model="message"
+                            ref="input"
+                            type="text"
+                            placeholder="Type a command"
+                            autofocus
+                            spellcheck="false"
+                            @keyup.esc="hideInput"
+                            @keyup="keyUp"
+                            @keydown="keyDown"
+                            @keypress.enter.prevent="send">
+                        </input>
+                    </div>
+                    <suggestions :message="message" :suggestions="suggestions"></suggestions>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="message_template">
+            <div class="msg" :class="{ multiline }">
+                <span v-html="textEscaped"></span>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="suggestions_template">
+            <div class="suggestions-wrap" v-show="currentSuggestions.length > 0">
+                <ul class="suggestions">
+                    <li class="suggestion" v-for="s in currentSuggestions">
+                        <p>
+                            <span :class="{ 'disabled': s.disabled }">
+                                {{s.name}}
+                            </span>
+                            <span class="param"
+                                        v-for="(p, index) in s.params"
+                                        :class="{ 'disabled': p.disabled }">
+                                [{{p.name}}]
+                            </span>
+                        </p>
+                        <small class="help">
+                            <template v-if="!s.disabled">
+                                {{s.help}}
+                            </template>
+                            <template v-for="p in s.params" v-if="!p.disabled">
+                                {{p.help}}
+                            </template>
+                        </small>
+                    </li>
+                </ul>
+            </div>
+        </script>
+
+        <script src="suggestions.js" type="text/javascript"></script>
+        <script src="message.js" type="text/javascript"></script>
+        <script src="app.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            window.post = (url, data) => {
+                var request = new XMLHttpRequest();
+                request.open('POST', url, true);
+                request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                request.send(data);
+            }
+
+            const instance = new Vue({
+                el: '#app',
+                render: h => h(APP),
+            });
+
+            window.emulate = (type, detail = {}) => {
+                detail.type = type;
+                window.dispatchEvent(new CustomEvent('message', {
+                    detail,
+                }));
+            };
+        </script>
+    </body>
+</html>

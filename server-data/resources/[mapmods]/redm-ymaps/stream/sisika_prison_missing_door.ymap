@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<CMapData>
+    <flags value="2"/>
+    <contentFlags value="65"/>
+    <streamingExtentsMin x="2918.453125" y="-1058.003235" z="-355.149181"/>
+    <streamingExtentsMax x="3718.453125" y="-258.003235" z="444.850819"/>
+    <entitiesExtentsMin x="3318.453125" y="-658.003235" z="44.850819"/>
+    <entitiesExtentsMax x="3318.453125" y="-658.003235" z="44.850819"/>
+    <entities>
+        <Item type="CEntityDef">
+            <archetypeName>p_doorlocked48a</archetypeName>
+            <flags value="1572865"/>
+            <position x="3318.453125" y="-658.003235" z="44.850819"/>
+            <rotation w="0.866026" x="0.000000" y="-0.000000" z="-0.499999"/>
+            <scaleXY value="1"/>
+            <scaleZ value="1"/>
+            <parentIndex value="-1"/>
+            <lodDist value="500"/>
+            <childLodDist value="500"/>
+            <lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+            <numChildren value="0"/>
+            <ambientOcclusionMultiplier value="255"/>
+            <artificialAmbientOcclusion value="255"/>
+            <extensions>
+                <Item type="SSxlGTA_0xDB12012B">
+                <name>p_doorlocked48a</name>
+                <offsetPosition x="0.00" y="0" z="0" />
+                <Id>sisika_missing_prison_door1</Id>
+                </Item>
+            </extensions>
+        </Item>
+    </entities>
+</CMapData>

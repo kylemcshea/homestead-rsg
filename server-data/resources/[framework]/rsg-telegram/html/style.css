@@ -1,0 +1,267 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inbox {
+    display: none;
+    color: white;
+    margin: auto;
+    background-color: #000000f2;
+    width: 750px;
+    height: 650px;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.header {
+    border-bottom: 1px solid #FFF;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+    float: left;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+}
+
+.header div {
+    width: 50%;
+}
+
+#postbox {
+    color: #ffc107a6;
+    font-size: 25px;
+    float: right;
+    font-family: Impact;
+    font-weight: normal;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+.inboxContainer {
+    height: 350px;
+}
+
+.inbox ul {
+    overflow-x: scroll;
+    height: 360px;
+}
+
+.inbox_row {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background: #22222242;
+    margin-bottom: 10px;
+}
+
+.inbox_row:hover {
+    cursor: pointer;
+    background: #000;
+}
+
+.inbox ul>div {
+    width: auto;
+}
+
+.inbox_subject {
+    width: 60%;
+}
+
+.inbox_sendername {
+    padding-right: 20px;
+	width: 20%;
+}
+
+.inbox_sender {
+    padding-right: 20px;
+}
+
+.inbox_date {
+    width: 20%;
+}
+
+.view {
+    display: none;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    background: url("bg.png") no-repeat;
+}
+
+.compose {
+    display: none;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    background: url("bg.png") no-repeat;
+}
+
+.inbox i {
+    color: #eae4e4;
+
+}
+
+.inbox_subject i {
+    padding-right: 5px;
+	color: white;
+}
+
+.btn {
+    font-size: 17px;
+    background: rgb(166 166 166);
+    border: 1px solid transparent;
+    border-radius: 08px;
+    color: #000;
+    text-transform: uppercase;
+    width: auto;
+    display: blockk;
+    margin-left: 55px;
+    margin-top: 150px;
+    padding: 9px;
+    font-family: Impact;
+    font-weight: normal;
+    letter-spacing: 2px;
+
+}
+
+.telegram_header {
+    position: relative;
+    margin-top: 52px;
+    margin-bottom: 15px;
+
+}
+
+.telegram_header h1 {
+    text-align: center;
+    text-transform: uppercase;
+	color: white;
+}
+
+.telegram_info {
+    display: flex;
+    flex-direction: row;
+	color: #a6a6a6;
+}
+
+.telegram_info div {
+    width: 33%;
+}
+
+.telegram_subject {
+    color: #a6a6a6;
+}
+
+.telegram_message {
+    color: #a6a6a6;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.close_view {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: white;
+}
+
+#view_subject {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bolder;
+    font-size: 20px;
+	color: #a6a6a6;
+}
+
+.telegram_footer {
+    text-align: center;
+}
+
+.telegram_footer button {
+    background-color: #a6a6a6;
+    border: 0;
+    color: #000;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-radius: 08px;
+}
+
+.compose #subject {
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer !important;
+}
+
+input[type="text"] {
+    background: transparent;
+    color: #f11b1b;
+    border: 0;
+}
+
+textarea {
+    width: 100%;
+    background: transparent;
+    color: #000;
+    font-weight: bold;
+    border: 0;
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: cursive;
+}
+
+#recipient {
+    text-transform: uppercasecase;
+}
+
+input::-webkit-input-placeholder {
+    color: #f11b1b;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #444343;
+    text-transform: normal;
+
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}

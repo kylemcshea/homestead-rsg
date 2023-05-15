@@ -1,0 +1,138 @@
+/* Nice font for button from Google Fonts */
+@import url('https://fonts.cdnfonts.com/css/chinese-rocks');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Chinese Rocks Rg', sans-serif;
+    font-weight: 300;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1f2331f2;
+    border-radius: 13px;
+}
+
+#container {
+    position: absolute;
+    height: auto;
+    top: 20%;
+    right: 20%;
+    border-radius: 5px;
+    background: transparent !important;
+}
+.button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+}
+.title {
+    cursor: default;
+    gap: 10px;
+    display: flex;
+    flex-direction: row !important;
+}
+
+#buttons {
+    max-height: 75vh;
+    width: 300px;
+    overflow-x: none;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+html,
+body {
+    background: transparent !important;
+}
+
+.button {
+    width: auto;
+    height: 10%;
+	background-color: #000000f2;
+	color: rgb(239, 228, 205);
+    text-shadow:2px 2px 4px #000000;
+    margin: auto;
+    position: relative;
+    top: 10%;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    padding: 0.45rem;
+    border-radius: 0.15rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0rem 0rem 0.5rem 0.05rem #000000;
+    cursor: pointer;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: left;
+}
+
+.button:hover {
+    background-color: #5f0214a6;
+}
+
+.title {
+    width: auto;
+    height: 10%;
+    background: rgba(110, 0, 0, 0.9);
+	color: rgb(239, 228, 205);
+    text-shadow:2px 2px 4px #000000;
+    margin: auto;
+    position: relative;
+    top: 10%;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    padding: 0.45rem;
+    border-radius: 0.15rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0rem 0rem 0.5rem 0.05rem #000000;
+}
+
+.title > div.column > div.header {
+    text-decoration: underline !important;
+}
+
+.disabled {
+    background: rgba(102, 102, 102, 0.9) !important;
+    cursor: default;
+}
+
+div > .text {
+    flex-direction: column;
+    font-size: 0.95rem;
+    overflow: hidden;
+}
+
+div > .header {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: left;
+    overflow: wrap;
+	color: rgb(239, 228, 205);
+    text-shadow:2px 2px 4px #000000;
+    font-size: 0.9rem;
+    font-weight: 400;
+    overflow: hidden;
+}
