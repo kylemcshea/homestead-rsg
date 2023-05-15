@@ -1,0 +1,5 @@
+1. Go to this link: https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/
+2. Download the Artifacts.
+3. Extract the artifacts into this folder (server-files)
+4. Run the FxServer.exe
+5. Happy hacking!

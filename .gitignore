@@ -2,6 +2,7 @@
 /server-data/server.cfg
 /txData/**
 /server-files/**
+!/server-files/DRAG_ARTIFACTS_HERE.txt
 /server-data/cache/**
 start_6446_default.bat
 server-data/.replxx_history
