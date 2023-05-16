@@ -12,7 +12,7 @@ var disableRightMouse = false;
 var selectedItem = null;
 var IsDragging = false;
 
-$(document).on("keydown", function() {
+$(document).on("keydown", function () {
     if (event.repeat) {
         return;
     }
@@ -29,7 +29,7 @@ $(document).on("keydown", function() {
     }
 });
 
-$(document).on("dblclick", ".item-slot", function(e) {
+$(document).on("dblclick", ".item-slot", function (e) {
     var ItemData = $(this).data("item");
     var ItemInventory = $(this).parent().attr("data-inventory");
     if (ItemData) {
@@ -44,7 +44,7 @@ $(document).on("dblclick", ".item-slot", function(e) {
     }
 });
 
-$(document).on("keyup", function() {
+$(document).on("keyup", function () {
     switch (event.keyCode) {
         case 17: // TAB
             ControlPressed = false;
@@ -52,7 +52,7 @@ $(document).on("keyup", function() {
     }
 });
 
-$(document).on("mouseenter", ".item-slot", function(e) {
+$(document).on("mouseenter", ".item-slot", function (e) {
     e.preventDefault();
     if ($(this).data("item") != null) {
         $(".ply-iteminfo-container").fadeIn(150);
@@ -64,7 +64,7 @@ $(document).on("mouseenter", ".item-slot", function(e) {
 
 function GetFirstFreeSlot($toInv, $fromSlot) {
     var retval = null;
-    $.each($toInv.find(".item-slot"), function(i, slot) {
+    $.each($toInv.find(".item-slot"), function (i, slot) {
         if ($(slot).data("item") === undefined) {
             if (retval === null) {
                 retval = i + 1;
@@ -83,7 +83,7 @@ function CanQuickMove() {
     return retval;
 }
 
-$(document).on("mousedown", ".item-slot", function(event) {
+$(document).on("mousedown", ".item-slot", function (event) {
     switch (event.which) {
         case 3:
             fromSlot = $(this).attr("data-slot");
@@ -130,7 +130,7 @@ $(document).on("mousedown", ".item-slot", function(event) {
     }
 });
 
-$(document).on("click", ".item-slot", function(e) {
+$(document).on("click", ".item-slot", function (e) {
     e.preventDefault();
     var ItemData = $(this).data("item");
 
@@ -144,7 +144,7 @@ $(document).on("click", ".item-slot", function(e) {
                     $("#weapon-attachments").hide().fadeIn(250);
                     ClickedItemData = ItemData;
                 } else if (ClickedItemData == ItemData) {
-                    $("#weapon-attachments").fadeOut(250, function() {
+                    $("#weapon-attachments").fadeOut(250, function () {
                         $("#weapon-attachments").remove();
                     });
                     ClickedItemData = {};
@@ -154,7 +154,7 @@ $(document).on("click", ".item-slot", function(e) {
             } else {
                 ClickedItemData = {};
                 if ($("#weapon-attachments").length) {
-                    $("#weapon-attachments").fadeOut(250, function() {
+                    $("#weapon-attachments").fadeOut(250, function () {
                         $("#weapon-attachments").remove();
                     });
                 }
@@ -162,7 +162,7 @@ $(document).on("click", ".item-slot", function(e) {
         } else {
             ClickedItemData = {};
             if ($("#weapon-attachments").length) {
-                $("#weapon-attachments").fadeOut(250, function() {
+                $("#weapon-attachments").fadeOut(250, function () {
                     $("#weapon-attachments").remove();
                 });
             }
@@ -170,31 +170,31 @@ $(document).on("click", ".item-slot", function(e) {
     } else {
         ClickedItemData = {};
         if ($("#weapon-attachments").length) {
-            $("#weapon-attachments").fadeOut(250, function() {
+            $("#weapon-attachments").fadeOut(250, function () {
                 $("#weapon-attachments").remove();
             });
         }
     }
 });
 
-$(document).on("click", "#inv-close", function(e) {
+$(document).on("click", "#inv-close", function (e) {
     e.preventDefault();
     Inventory.Close();
 });
 
-$(document).on("click", ".weapon-attachments-back", function(e) {
+$(document).on("click", ".weapon-attachments-back", function (e) {
     e.preventDefault();
     $("#qbcore-inventory").css({ display: "block" });
     $("#qbcore-inventory").animate({
-            left: 0 + "vw",
-        },
+        left: 0 + "vw",
+    },
         200
     );
     $(".weapon-attachments-container").animate({
-            left: -100 + "vw",
-        },
+        left: -100 + "vw",
+    },
         200,
-        function() {
+        function () {
             $(".weapon-attachments-container").css({ display: "none" });
         }
     );
@@ -208,7 +208,7 @@ function FormatAttachmentInfo(data) {
             weapon: data.name,
             ItemData: ClickedItemData,
         }),
-        function(data) {
+        function (data) {
             var AmmoLabel = "9mm";
             var Durability = 100;
             if (data.WeaponData.ammotype == "AMMO_RIFLE") {
@@ -247,7 +247,7 @@ function FormatAttachmentInfo(data) {
                     $(".weapon-attachments-title").html(
                         '<span style="font-weight: bold; letter-spacing: .1vh;">Attachments</span>'
                     );
-                    $.each(data.AttachmentData, function(i, attachment) {
+                    $.each(data.AttachmentData, function (i, attachment) {
                         var WeaponType = data.WeaponData.ammotype
                             .split("_")[1]
                             .toLowerCase();
@@ -290,31 +290,31 @@ function handleAttachmentDrag() {
         scroll: true,
         revertDuration: 0,
         revert: "invalid",
-        start: function(event, ui) {
+        start: function (event, ui) {
             var ItemData = $(this).data("AttachmentData");
             $(this).addClass("weapon-dragging-class");
             AttachmentDraggingData = ItemData;
         },
-        stop: function() {
+        stop: function () {
             $(this).removeClass("weapon-dragging-class");
         },
     });
     $(".weapon-attachments-remove").droppable({
         accept: ".weapon-attachment",
         hoverClass: "weapon-attachments-remove-hover",
-        drop: function(event, ui) {
+        drop: function (event, ui) {
             $.post(
                 "https://rsg-inventory/RemoveAttachment",
                 JSON.stringify({
                     AttachmentData: AttachmentDraggingData,
                     WeaponData: ClickedItemData,
                 }),
-                function(data) {
+                function (data) {
                     if (data.Attachments !== null && data.Attachments !== undefined) {
                         if (data.Attachments.length > 0) {
                             $("#weapon-attachment-" + AttachmentDraggingData.id).fadeOut(
                                 150,
-                                function() {
+                                function () {
                                     $("#weapon-attachment-" + AttachmentDraggingData.id).remove();
                                     AttachmentDraggingData = null;
                                 }
@@ -322,7 +322,7 @@ function handleAttachmentDrag() {
                         } else {
                             $("#weapon-attachment-" + AttachmentDraggingData.id).fadeOut(
                                 150,
-                                function() {
+                                function () {
                                     $("#weapon-attachment-" + AttachmentDraggingData.id).remove();
                                     AttachmentDraggingData = null;
                                     $(".weapon-attachments").html("");
@@ -335,7 +335,7 @@ function handleAttachmentDrag() {
                     } else {
                         $("#weapon-attachment-" + AttachmentDraggingData.id).fadeOut(
                             150,
-                            function() {
+                            function () {
                                 $("#weapon-attachment-" + AttachmentDraggingData.id).remove();
                                 AttachmentDraggingData = null;
                                 $(".weapon-attachments").html("");
@@ -351,21 +351,21 @@ function handleAttachmentDrag() {
     });
 }
 
-$(document).on("click", "#weapon-attachments", function(e) {
+$(document).on("click", "#weapon-attachments", function (e) {
     e.preventDefault();
     if (!Inventory.IsWeaponBlocked(ClickedItemData.name)) {
         $(".weapon-attachments-container").css({ display: "block" });
         $("#qbcore-inventory").animate({
-                left: 100 + "vw",
-            },
+            left: 100 + "vw",
+        },
             200,
-            function() {
+            function () {
                 $("#qbcore-inventory").css({ display: "none" });
             }
         );
         $(".weapon-attachments-container").animate({
-                left: 0 + "vw",
-            },
+            left: 0 + "vw",
+        },
             200
         );
         AttachmentScreenActive = true;
@@ -384,10 +384,10 @@ $(document).on("click", "#weapon-attachments", function(e) {
 function FormatItemInfo(itemData) {
     if (itemData != null && itemData.info != "") {
         if (itemData.name == "id_card") {
-            var gender = "Man";
-            if (itemData.info.gender == 1) {
+            let gender = "Man";
+            if (itemData.info.gender == "Woman")
                 gender = "Woman";
-            }
+
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
                 "<p><strong>CSN: </strong><span>" +
@@ -455,7 +455,7 @@ function FormatItemInfo(itemData) {
             }
             if (itemData.info.attachments != null) {
                 var attachmentString = "";
-                $.each(itemData.info.attachments, function(i, attachment) {
+                $.each(itemData.info.attachments, function (i, attachment) {
                     if (i == itemData.info.attachments.length - 1) {
                         attachmentString += attachment.label;
                     } else {
@@ -561,11 +561,11 @@ function FormatItemInfo(itemData) {
                 "</span></p>"
             );
         } else if (itemData.name == "visa" || itemData.name == "mastercard") {
-            $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            var str = ""+ itemData.info.cardNumber + "";
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            var str = "" + itemData.info.cardNumber + "";
             var res = str.slice(12);
             var cardNumber = "************" + res;
-            $(".item-info-description").html('<p><strong>Card Holder: </strong><span>' + itemData.info.name + '</span></p><p><strong>Citizen ID: </strong><span>' + itemData.info.citizenid + '</span></p><p><strong>Card Number: </strong><span>' + cardNumber + '</span></p>');			
+            $(".item-info-description").html('<p><strong>Card Holder: </strong><span>' + itemData.info.name + '</span></p><p><strong>Citizen ID: </strong><span>' + itemData.info.citizenid + '</span></p><p><strong>Card Number: </strong><span>' + cardNumber + '</span></p>');
         } else if (itemData.name == "labkey") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html("<p>Lab: " + itemData.info.lab + "</p>");
@@ -590,7 +590,7 @@ function handleDragDrop() {
         revertDuration: 0,
         revert: "invalid",
         cancel: ".item-nodrag",
-        start: function(event, ui) {
+        start: function (event, ui) {
             IsDragging = true;
             $(this).find("img").css("filter", "brightness(50%)");
             $(".item-slot").css("border", "1px solid rgba(255, 255, 255, 0.1)");
@@ -694,8 +694,8 @@ function handleDragDrop() {
                 InventoryError($(this).parent(), $(this).attr("data-slot"));
             }
         },
-        stop: function() {
-            setTimeout(function() {
+        stop: function () {
+            setTimeout(function () {
                 IsDragging = false;
             }, 300);
             $(this).css("background", "rgba(0, 0, 0, 0.3)");
@@ -706,8 +706,8 @@ function handleDragDrop() {
 
     $(".item-slot").droppable({
         hoverClass: "item-slot-hoverClass",
-        drop: function(event, ui) {
-            setTimeout(function() {
+        drop: function (event, ui) {
+            setTimeout(function () {
                 IsDragging = false;
             }, 300);
             fromSlot = ui.draggable.attr("data-slot");
@@ -731,8 +731,8 @@ function handleDragDrop() {
 
     $("#item-use").droppable({
         hoverClass: "button-hover",
-        drop: function(event, ui) {
-            setTimeout(function() {
+        drop: function (event, ui) {
+            setTimeout(function () {
                 IsDragging = false;
             }, 300);
             fromData = ui.draggable.data("item");
@@ -754,8 +754,8 @@ function handleDragDrop() {
 
     $("#item-drop").droppable({
         hoverClass: "item-slot-hoverClass",
-        drop: function(event, ui) {
-            setTimeout(function() {
+        drop: function (event, ui) {
+            setTimeout(function () {
                 IsDragging = false;
             }, 300);
             fromData = ui.draggable.data("item");
@@ -1005,7 +1005,7 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
 var combineslotData = null;
 
-$(document).on("click", ".CombineItem", function(e) {
+$(document).on("click", ".CombineItem", function (e) {
     e.preventDefault();
     if (combineslotData.toData.combinable.anim != null) {
         $.post(
@@ -1029,7 +1029,7 @@ $(document).on("click", ".CombineItem", function(e) {
     Inventory.Close();
 });
 
-$(document).on("click", ".SwitchItem", function(e) {
+$(document).on("click", ".SwitchItem", function (e) {
     e.preventDefault();
     $(".combine-option-container").hide();
 
@@ -1209,7 +1209,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
             newData.slot = parseInt($toSlot);
 
             if (newData.name == fromData.name) {
-                if (newData.info.quality !== fromData.info.quality  ) {
+                if (newData.info.quality !== fromData.info.quality) {
                     InventoryError($fromInv, $fromSlot);
                     $.post(
                         "https://rsg-inventory/Notify",
@@ -1231,7 +1231,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
                 var ItemLabel =
                     '<div class="item-slot-label"><p>' + newData.label + "</p></div>";
-                    ItemLabel =
+                ItemLabel =
                     '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                     newData.label +
                     "</p></div>";
@@ -1349,7 +1349,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
                 var ItemLabel =
                     '<div class="item-slot-label"><p>' + newData.label + "</p></div>";
-                    ItemLabel =
+                ItemLabel =
                     '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                     newData.label +
                     "</p></div>";
@@ -1431,7 +1431,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     })
                     .find("p")
                     .html(qualityLabel);
-				
+
                 $fromInv
                     .find("[data-slot=" + $fromSlot + "]")
                     .data("item", newDataFrom);
@@ -1462,7 +1462,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                         '<div class="item-slot-label"><p>' +
                         newDataFrom.label +
                         "</p></div>";
-                        ItemLabel =
+                    ItemLabel =
                         '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                         newDataFrom.label +
                         "</p></div>";
@@ -1579,7 +1579,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     $.post(
                         "https://rsg-inventory/getCombineItem",
                         JSON.stringify({ item: toData.combinable.reward }),
-                        function(item) {
+                        function (item) {
                             $(".combine-option-text").html(
                                 "<p>If you combine these items you get: <b>" +
                                 item.label +
@@ -1608,7 +1608,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
                 var ItemLabel =
                     '<div class="item-slot-label"><p>' + fromData.label + "</p></div>";
-                    ItemLabel =
+                ItemLabel =
                     '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                     fromData.label +
                     "</p></div>";
@@ -1706,7 +1706,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
                     var ItemLabel =
                         '<div class="item-slot-label"><p>' + toData.label + "</p></div>";
-                        ItemLabel =
+                    ItemLabel =
                         '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                         toData.label +
                         "</p></div>";
@@ -1874,7 +1874,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
                 var ItemLabel =
                     '<div class="item-slot-label"><p>' + newDataTo.label + "</p></div>";
-                    ItemLabel =
+                ItemLabel =
                     '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                     newDataTo.label +
                     "</p></div>";
@@ -2004,7 +2004,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                         '<div class="item-slot-label"><p>' +
                         newDataFrom.label +
                         "</p></div>";
-                        ItemLabel =
+                    ItemLabel =
                         '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                         newDataFrom.label +
                         "</p></div>";
@@ -2121,7 +2121,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
 
 function isItemAllowed(item, allowedItems) {
     var retval = false;
-    $.each(allowedItems, function(index, i) {
+    $.each(allowedItems, function (index, i) {
         if (i == item) {
             retval = true;
         }
@@ -2134,7 +2134,7 @@ function InventoryError($elinv, $elslot) {
         .find("[data-slot=" + $elslot + "]")
         .css("background", "rgba(156, 20, 20, 0.5)")
         .css("transition", "background 500ms");
-    setTimeout(function() {
+    setTimeout(function () {
         $elinv
             .find("[data-slot=" + $elslot + "]")
             .css("background", "rgba(255, 255, 255, 0.3)");
@@ -2153,17 +2153,17 @@ var requiredItemOpen = false;
     Inventory.droplabel = "Drop";
     Inventory.dropmaxweight = 100000;
 
-    Inventory.Error = function() {
+    Inventory.Error = function () {
         $.post("https://rsg-inventory/PlayDropFail", JSON.stringify({}));
     };
 
-    Inventory.IsWeaponBlocked = function(WeaponName) {
+    Inventory.IsWeaponBlocked = function (WeaponName) {
         var DurabilityBlockedWeapons = [
             "weapon_unarmed",
         ];
 
         var retval = false;
-        $.each(DurabilityBlockedWeapons, function(i, name) {
+        $.each(DurabilityBlockedWeapons, function (i, name) {
             if (name == WeaponName) {
                 retval = true;
             }
@@ -2171,7 +2171,7 @@ var requiredItemOpen = false;
         return retval;
     };
 
-    Inventory.QualityCheck = function(item, IsHotbar, IsOtherInventory) {
+    Inventory.QualityCheck = function (item, IsHotbar, IsOtherInventory) {
         if (item.info.quality == undefined) {
             item.info.quality = 100;
         }
@@ -2260,7 +2260,7 @@ var requiredItemOpen = false;
         }
     };
 
-    Inventory.Open = function(data) {
+    Inventory.Open = function (data) {
         totalWeight = 0;
         totalWeightOther = 0;
 
@@ -2325,12 +2325,12 @@ var requiredItemOpen = false;
         }
 
         if (data.inventory !== null) {
-            $.each(data.inventory, function(i, item) {
+            $.each(data.inventory, function (i, item) {
                 if (item != null) {
                     totalWeight += item.weight * item.amount;
                     var ItemLabel =
                         '<div class="item-slot-label"><p>' + item.label + "</p></div>";
-                        ItemLabel =
+                    ItemLabel =
                         '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                         item.label +
                         "</p></div>";
@@ -2410,12 +2410,12 @@ var requiredItemOpen = false;
             data.other != "" &&
             data.other.inventory != null
         ) {
-            $.each(data.other.inventory, function(i, item) {
+            $.each(data.other.inventory, function (i, item) {
                 if (item != null) {
                     totalWeightOther += item.weight * item.amount;
                     var ItemLabel =
                         '<div class="item-slot-label"><p>' + item.label + "</p></div>";
-                        ItemLabel =
+                    ItemLabel =
                         '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                         item.label +
                         "</p></div>";
@@ -2498,14 +2498,14 @@ var requiredItemOpen = false;
             otherLabel = Inventory.droplabel;
         }
 
-        $.each(data.maxammo, function(index, ammotype) {
+        $.each(data.maxammo, function (index, ammotype) {
             $("#" + index + "_ammo")
                 .find(".ammo-box-amount")
                 .css({ height: "0%" });
         });
 
         if (data.Ammo !== null) {
-            $.each(data.Ammo, function(i, amount) {
+            $.each(data.Ammo, function (i, amount) {
                 var Handler = i.split("_");
                 var Type = Handler[1].toLowerCase();
                 if (amount > data.maxammo[Type]) {
@@ -2525,7 +2525,7 @@ var requiredItemOpen = false;
         handleDragDrop();
     };
 
-    Inventory.Close = function() {
+    Inventory.Close = function () {
         $(".item-slot").css("border", "1px solid rgba(255, 255, 255, 0.1)");
         $(".ply-hotbar-inventory").css("display", "block");
         $(".ply-iteminfo-container").css("display", "none");
@@ -2544,14 +2544,14 @@ var requiredItemOpen = false;
         }
 
         if (ClickedItemData !== null) {
-            $("#weapon-attachments").fadeOut(250, function() {
+            $("#weapon-attachments").fadeOut(250, function () {
                 $("#weapon-attachments").remove();
                 ClickedItemData = {};
             });
         }
     };
 
-    Inventory.Update = function(data) {
+    Inventory.Update = function (data) {
         totalWeight = 0;
         totalWeightOther = 0;
         $(".player-inventory").find(".item-slot").remove();
@@ -2575,7 +2575,7 @@ var requiredItemOpen = false;
             }
         }
 
-        $.each(data.inventory, function(i, item) {
+        $.each(data.inventory, function (i, item) {
             if (item != null) {
                 totalWeight += item.weight * item.amount;
                 if (item.slot < 6) {
@@ -2660,7 +2660,7 @@ var requiredItemOpen = false;
         handleDragDrop();
     };
 
-    Inventory.ToggleHotbar = function(data) {
+    Inventory.ToggleHotbar = function (data) {
         if (data.open) {
             $(".z-hotbar-inventory").html("");
             for (i = 1; i < 6; i++) {
@@ -2675,11 +2675,11 @@ var requiredItemOpen = false;
             var elem =
                 '<div class="z-hotbar-item-slot" data-zhotbarslot="41"> <div class="z-hotbar-item-slot-key"><p>6 <i class="fas fa-lock"></i></p></div><div class="z-hotbar-item-slot-img"></div><div class="z-hotbar-item-slot-label"><p>&nbsp;</p></div></div>';
             $(".z-hotbar-inventory").append(elem);
-            $.each(data.items, function(i, item) {
+            $.each(data.items, function (i, item) {
                 if (item != null) {
                     var ItemLabel =
                         '<div class="item-slot-label"><p>' + item.label + "</p></div>";
-                        ItemLabel =
+                    ItemLabel =
                         '<div class="item-slot-quality"><div class="item-slot-quality-bar"><p>100</p></div></div><div class="item-slot-label"><p>' +
                         item.label +
                         "</p></div>";
@@ -2721,13 +2721,13 @@ var requiredItemOpen = false;
             });
             $(".z-hotbar-inventory").fadeIn(150);
         } else {
-            $(".z-hotbar-inventory").fadeOut(150, function() {
+            $(".z-hotbar-inventory").fadeOut(150, function () {
                 $(".z-hotbar-inventory").html("");
             });
         }
     };
 
-    Inventory.UseItem = function(data) {
+    Inventory.UseItem = function (data) {
         $(".itembox-container").hide();
         $(".itembox-container").fadeIn(250);
         $("#itembox-action").html("<p>Used</p>");
@@ -2739,7 +2739,7 @@ var requiredItemOpen = false;
             data.item.name +
             '" /></div>'
         );
-        setTimeout(function() {
+        setTimeout(function () {
             $(".itembox-container").fadeOut(250);
         }, 2000);
     };
@@ -2747,7 +2747,7 @@ var requiredItemOpen = false;
     var itemBoxtimer = null;
     var requiredTimeout = null;
 
-    Inventory.itemBox = function(data) {
+    Inventory.itemBox = function (data) {
         if (itemBoxtimer !== null) {
             clearTimeout(itemBoxtimer);
         }
@@ -2773,21 +2773,21 @@ var requiredItemOpen = false;
         );
         $(".itemboxes-container").prepend($itembox);
         $itembox.fadeIn(250);
-        setTimeout(function() {
-            $.when($itembox.fadeOut(300)).done(function() {
+        setTimeout(function () {
+            $.when($itembox.fadeOut(300)).done(function () {
                 $itembox.remove();
             });
         }, 3000);
     };
 
-    Inventory.RequiredItem = function(data) {
+    Inventory.RequiredItem = function (data) {
         if (requiredTimeout !== null) {
             clearTimeout(requiredTimeout);
         }
         if (data.toggle) {
             if (!requiredItemOpen) {
                 $(".requiredItem-container").html("");
-                $.each(data.items, function(index, item) {
+                $.each(data.items, function (index, item) {
                     var element =
                         '<div class="requiredItem-box"><div id="requiredItem-action">Required</div><div id="requiredItem-label"><p>' +
                         item.label +
@@ -2804,15 +2804,15 @@ var requiredItemOpen = false;
             }
         } else {
             $(".requiredItem-container").fadeOut(100);
-            requiredTimeout = setTimeout(function() {
+            requiredTimeout = setTimeout(function () {
                 $(".requiredItem-container").html("");
                 requiredItemOpen = false;
             }, 100);
         }
     };
 
-    window.onload = function(e) {
-        window.addEventListener("message", function(event) {
+    window.onload = function (e) {
+        window.addEventListener("message", function (event) {
             switch (event.data.action) {
                 case "open":
                     Inventory.Open(event.data);
@@ -2843,7 +2843,7 @@ var requiredItemOpen = false;
     };
 })();
 
-$(document).on("click", "#rob-money", function(e) {
+$(document).on("click", "#rob-money", function (e) {
     e.preventDefault();
     var TargetId = $(this).data("TargetId");
     $.post(
@@ -2857,8 +2857,8 @@ $(document).on("click", "#rob-money", function(e) {
 
 $("#item-give").droppable({
     hoverClass: "button-hover",
-    drop: function(event, ui) {
-        setTimeout(function() {
+    drop: function (event, ui) {
+        setTimeout(function () {
             IsDragging = false;
         }, 300);
         fromData = ui.draggable.data("item");

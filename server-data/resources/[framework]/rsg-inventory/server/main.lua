@@ -1832,7 +1832,7 @@ CreateUsableItem("id_card", function(source, item)
 		local dist = #(playerCoords - GetEntityCoords(targetPed))
 		if dist < 3.0 then
 			local gender = "Man"
-			if item.info.gender == 1 then
+			if item.info.gender == "Woman" then
 				gender = "Woman"
 			end
 			TriggerClientEvent('chat:addMessage', v,  {
