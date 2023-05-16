@@ -20,7 +20,6 @@ RegisterNetEvent('rsg-spawn:client:openUI', function(value)
     end)
     Wait(500)
     SetDisplay(value)
-    
 end)
 
 RegisterNUICallback("exit", function(data)
@@ -356,3 +355,87 @@ RegisterNetEvent('rsg-spawn:client:setupSpawns', function(cData, new, apps)
         })
     end
 end)
+
+-----------------
+-- DEV TOOLING --
+-----------------
+
+local IS_DEV_MODE = true
+
+if (IS_DEV_MODE) then
+    local mockData = {
+        id = 144,
+        position = {x = 1416.5933837890626, y = 266.980224609375, z = 89.6527099609375},
+        metadata = {
+        bloodtype = "B-",
+        fitbit = {},
+        hunger = 66.39999999999998,
+        stress = 0,
+        walletid = "rsg-23130964",
+        armor = 0,
+        dealerrep = 0,
+        licences = {weapon = false},
+        tracker = false,
+        levels = {mining = 0, crafting = 0, cooking = 0, herbalism = 0, main = 0},
+        injail = 0,
+        callsign = "NO CALLSIGN",
+        inside = {apartment = {}},
+        thirst = 54.40000000000003,
+        attachmentcraftingrep = 0,
+        commandbinds = {},
+        house = "none",
+        health = 550,
+        ishandcuffed = false,
+        jobrep = {trucker = 0, hotdog = 0, tow = 0, taxi = 0},
+        fingerprint = "BB682R72MOI5423",
+        xp = {mining = 0, crafting = 0, cooking = 0, herbalism = 0, main = 0},
+        inlaststand = false,
+        phone = {},
+        craftingrep = 0,
+        status = {},
+        isdead = false,
+        criminalrecord = {hasRecord = false},
+        jailitems = {}
+        },
+        gang = {
+        isboss = false,
+        grade = {level = 0, name = "none"},
+        name = "none",
+        label = "No Gang Affiliaton"
+        },
+        job = {
+        label = "Civilian",
+        type = "none",
+        isboss = false,
+        grade = {level = 0, name = "Freelancer"},
+        name = "unemployed",
+        payment = 10,
+        onduty = true
+        },
+        last_updated = 1684271398000,
+        citizenid = "XPM93928",
+        charinfo = {
+        phone = "3777794588",
+        lastname = "jenkins",
+        nationality = "mexico",
+        birthdate = "1800-01-01",
+        firstname = "kale",
+        account = "RSG36308560325",
+        backstory = "placeholder backstory",
+        gender = "undefined",
+        cid = "1"
+        },
+        license = "license:46ca2ee691979f22f88bf78660ad25d4e6e3b923",
+        inventory = {
+        {name = "bread", info = {quality = 100}, slot = 1, type = "item", amount = 3},
+        {name = "water", info = {quality = 100}, slot = 2, type = "item", amount = 4}
+        },
+        name = "broski i really dooby high af fr",
+        money = {cash = 432, bloodmoney = 0, bank = 5070},
+        cid = 1
+    }
+
+    RegisterCommand("showspawn", function()
+        TriggerEvent('rsg-spawn:client:setupSpawnUI', mockData, false)
+    end)
+end
