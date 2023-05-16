@@ -247,10 +247,18 @@ local function reloadSkin()
     TriggerServerEvent("rsg-appearance:LoadSkin")
 end
 
-RegisterCommand('loadskin', reloadSkin() end)
-RegisterCommand('reloadskin', reloadSkin() end)
-RegisterCommand('refreshskin', reloadSkin() end)
-RegisterCommand('rc', reloadSkin() end)
+local RELOAD_SKIN_COMMANDS = {
+    'loadskin',
+    'reloadskin',
+    'refreshskin',
+    'rc'
+}
+
+for _, command in ipairs(RELOAD_SKIN_COMMANDS) do
+    RegisterCommand(command, function(source, args, raw)
+        reloadSkin()
+    end)
+end
 
 RegisterCommand('creator', function(source, args, raw)
     StartCreator()
