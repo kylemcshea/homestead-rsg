@@ -1,6 +1,6 @@
 RSG = {}
 
-RSG.WelcomeText = "WELCOME TO RSG FRAMEWORK"
+RSG.WelcomeText = "WELCOME TO HOMESTEAD COUNTY 🤠"
 
 RSG.Texts = {
     Body = "Body",
