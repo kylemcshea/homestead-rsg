@@ -242,11 +242,23 @@ AddEventHandler('rsg-appearance:LoadSkinClient', function()
     end
 end)
 
-RegisterCommand('loadskin', function(source, args, raw)
-    if isLoggedIn then
-        TriggerServerEvent("rsg-appearance:LoadSkin")
-    end
-end)
+local function reloadSkin()
+    if not isLoggedIn then return end
+    TriggerServerEvent("rsg-appearance:LoadSkin")
+end
+
+local RELOAD_SKIN_COMMANDS = {
+    'loadskin',
+    'reloadskin',
+    'refreshskin',
+    'rc'
+}
+
+for _, command in ipairs(RELOAD_SKIN_COMMANDS) do
+    RegisterCommand(command, function(source, args, raw)
+        reloadSkin()
+    end)
+end
 
 RegisterCommand('creator', function(source, args, raw)
     StartCreator()
