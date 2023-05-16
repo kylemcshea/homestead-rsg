@@ -53,29 +53,35 @@ $(document).on("click", ".location", function (evt) {
   }
 });
 
-$(document).keypress(function (event) {
-    const keyPressed = event.which;
-    switch (keyPressed) {
-      case 13:
-        console.log("Enter key pressed!");
-        break;
-      case 37:
-        console.log("Left arrow key pressed!");
-        break;
-      case 38:
-        console.log("Up arrow key pressed!");
-        break;
-      case 39:
-        console.log("Right arrow key pressed!");
-        break;
-      case 40:
-        console.log("Down arrow key pressed!");
-        break;
-      default:
-        console.log("Key pressed:", event.which);
-        break;
-    }
-  });
+$(document).keydown(function (event) {
+  const keyPressed = event.which;
+
+  switch (keyPressed) {
+    case 13:
+      handleEnterKey();
+      break;
+    case 38:
+      handleUpKey();
+      break;
+    case 40:
+      handleDownKey();
+      break;
+    default:
+      break;
+  }
+});
+
+function handleEnterKey() {
+  // TODO: Handle Enter Key
+}
+
+function handleUpKey() {
+  // TODO: Handle up key
+}
+
+function handleDownKey() {
+  // TODO: Handle down key
+}
 
 $(document).on("click", "#submit-spawn", function (evt) {
   evt.preventDefault(); //dont do default anchor stuff
