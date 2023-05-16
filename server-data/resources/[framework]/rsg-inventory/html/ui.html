@@ -23,7 +23,7 @@
       <div id="qbcore-inventory">
             <div class="inventory-info">
                 <div class="player-inv-info">
-                    <span id="player-inv-label">Pockets</span><br>
+                    <span id="player-inv-label" class="player-inv-label">Player</span><br>
                     <!-- <img class="weight-img" src="images/weight.png"> -->
                         <div>
                             <div id="progressbar">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="inv-options">
                   <div class="inv-options-list">
-                      <!--<img class="brand-logo" src="./images/lj-symbol.svg"></img>-->
+                      <!-- <img class="brand-logo" src="./images/lj-symbol.svg"></img> -->
                       
                       <!-- <div class="inv-option-item color-picker-container">
                         <label for="favcolor">Color:</label>
@@ -92,10 +92,10 @@
             <div id="inventory-menus" style="min-height: 100vh;">
                 <div class="row">
                   <!-- Anyone really use this? -Ok1ez -->
-                  <!-- <div class="inv-help-options">
+                  <div class="inv-help-options">
                     <q-btn class="" color="button" @click="options = true"><i class="fas fa-gear"></i></q-btn>
-                    <q-btn class="" color="button" @click="help = true"><i class="fas fa-question"></i></q-btn>
-                  </div> -->
+                    <!-- <q-btn class="" color="button" @click="help = true"><i class="fas fa-question"></i></q-btn> -->
+                  </div>
                   <q-dialog v-model="options">
                     <q-card>
                       <q-card-section>

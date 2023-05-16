@@ -305,6 +305,7 @@ body {
   text-shadow: none;
   margin-left: 18%;
   margin-top: 40%;
+  z-index: 9999;
 }
 
 .inv-help-options button {
@@ -329,45 +330,6 @@ body {
   width: auto;
   left: 0vh;
   margin: 0px auto;
-}
-
-.player-inventory .item-slot {
-  position: relative;
-  width: 14.2%;
-  height: 14.2%;
-  float: left;
-  border: 2px solid #3c3c3c;
-  background-color: #282828 !important;
-  margin: 3px;
-  transition: opacity 0.2s ease 0s;
-  border-radius: 9px;
-  opacity: 90%;
-}
-
-.player-inventory-first .item-slot {
-  position: relative;
-  width: 89.2%;
-  height: 18.85%;
-  float: left;
-  border: 2px solid #3c3c3c;
-  background-color: #282828 !important;
-  margin: 3px;
-  transition: opacity 0.2s ease 0s;
-  border-radius: 9px;
-  opacity: 90%;
-}
-
-.other-inventory .item-slot {
-  position: relative;
-  width: 23.2%;
-  height: 15.75%;
-  float: left;
-  border: 2px solid #3c3c3c;
-  background-color: #282828 !important;
-  margin: 3px;
-  transition: opacity 0.2s ease 0s;
-  border-radius: 9px;
-  opacity: 90%;
 }
 
 .item-slot {
@@ -451,7 +413,7 @@ body {
   line-height: 48px;
   text-transform: normal;
   font-size: 1.5vh;
-  font-weight: 300;
+  font-weight: 200;
   font-family: "Chinese Rocks Rg", sans-serif !important;
 }
 .inv-option-item > label {
@@ -460,7 +422,7 @@ body {
   line-height: 48px;
   text-transform: normal;
   font-size: 1.5vh;
-  font-weight: 300;
+  font-weight: 200;
   font-family: "Chinese Rocks Rg", sans-serif !important;
   margin-right: 10px;
   margin-bottom: auto;
@@ -488,7 +450,7 @@ body {
 }
 
 .inv-option-item:hover {
-  background-color: #787878;
+  background-color: #5c5c6c;
 }
 
 .btn-combine {
@@ -502,8 +464,8 @@ body {
   text-align: center;
   line-height: 48px;
   font-size: 1.1vh;
-  font-weight: 900;
-  font-family: "Chinese Rocks Rg", sans-serif !important;
+  font-weight: 400;
+  font-family: Roboto, sans-serif !important;
   border-radius: 0px;
   border-width: 1px;
   border-style: solid;
@@ -526,7 +488,7 @@ body {
   position: absolute;
   top: 0.3%;
   left: 0.15vw;
-  background-color: #505050;
+  background-color: #41414b;
   padding-right: 4px;
   padding-left: 4px;
   border-radius: 50px;
@@ -544,7 +506,7 @@ body {
   position: absolute;
   top: 0.3%;
   right: 0.15vw;
-  background-color: #505050;
+  background-color: #41414b;
   padding-right: 4px;
   padding-left: 4px;
   border-radius: 50px;
@@ -654,9 +616,9 @@ body {
 #player-inv-label {
   position: relative;
   color: white;
-  font-size: 23px;
+  font-size: 20px;
   font-family: "Chinese Rocks Rg", sans-serif !important;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0.01vh;
   right: -66%;
   float: left;
@@ -667,11 +629,11 @@ body {
 #player-inv-weight {
   position: relative;
   color: rgb(255, 255, 255);
-  font-size: 19px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 200;
   font-family: "Chinese Rocks Rg", sans-serif !important;
   letter-spacing: 0.1vh;
-  bottom: 32px;
+  bottom: 30px;
   right: -77%;
   float: right;
 }
@@ -679,9 +641,9 @@ body {
 #other-inv-label {
   position: relative;
   color: white;
-  font-size: 23px;
+  font-size: 20px;
   font-family: "Chinese Rocks Rg", sans-serif !important;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0.01vh;
   left: 3%;
   float: left;
@@ -692,11 +654,11 @@ body {
 #other-inv-weight {
   position: relative;
   color: rgb(255, 255, 255);
-  font-size: 19px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 200;
   font-family: "Chinese Rocks Rg", sans-serif !important;
   letter-spacing: 0.1vh;
-  bottom: 32px;
+  bottom: 30px;
   right: 20.5%;
   float: right;
   cursor: none;
@@ -746,7 +708,7 @@ body {
 
 .item-info-title {
   text-transform: normal;
-  font-weight: 900;
+  font-weight: 200;
   font-family: sans-serif;
   font-size: 2.4vh;
   letter-spacing: 0.3px;
@@ -768,7 +730,7 @@ body {
 .item-info-description {
   text-transform: normal;
   font-size: 1.4vh;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.1;
   letter-spacing: 0.3px;
   font-family: "Chinese Rocks Rg", sans-serif !important;
@@ -784,7 +746,7 @@ body {
   width: fit-content;
   position: absolute;
   left: 47%;
-  bottom: 20%;
+  bottom: 9.8%;
   overflow: hidden;
 }
 
@@ -859,7 +821,7 @@ body {
 
 .requiredItem-box {
   position: relative;
-  top: 70%;
+  top: 79%;
   left: 42%;
   width: 10vh;
   height: 11vh;
@@ -957,7 +919,7 @@ body {
   position: absolute;
   top: 0.5%;
   left: 0.15vw;
-  background-color: #505050;
+  background-color: #41414b;
   padding-right: 4px;
   padding-left: 4px;
   border-radius: 50px;
@@ -975,7 +937,7 @@ body {
   position: absolute;
   top: 0.5%;
   right: 0.15vw;
-  background-color: #505050;
+  background-color: #41414b;
   padding-right: 4px;
   padding-left: 4px;
   border-radius: 50px;
@@ -1001,7 +963,7 @@ body {
   padding: 2.5px;
   padding-left: 5px;
   color: white;
-  font-size: 1.15vh;
+  font-size: 1.35vh;
   text-align: left;
   letter-spacing: 0px;
   font-family: "Chinese Rocks Rg", sans-serif !important;
@@ -1333,27 +1295,144 @@ body {
   justify-content: center;
 }
 
-.first-slots-container-container {
-  position: absolute;
-  float: left;
-  top: 9%;
-  left: 0.2%;
-  width: 35.7%;
-  max-width: 35.7%;
-  height: 64.17%;
-  max-height: 64.17%;
+@media (width: 2560px) and (height: 1440px) {
+  .item-slot {
+    position: relative;
+    width: 133px;
+    height: 133px;
+    float: left;
+    border: 2px solid #3c3c3c;
+    background-color: #282828 !important;
+    margin: 3px;
+    transition: opacity 0.2s ease 0s;
+    border-radius: 9px;
+    opacity: 90%;
+  }
 }
 
-.first-slots-container {
-  position: absolute;
-  float: left;
-  top: 15%;
-  left: 34.2%;
-  width: 27.7%;
-  max-width: 35.7%;
-  height: 64.17%;
-  max-height: 64.17%;
-  background: var(--color-primary);
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+@media (width: 3360px) and (height: 1440px) {
+  .item-slot {
+    position: relative;
+    width: 133px;
+    height: 133px;
+    float: left;
+    border: 2px solid #3c3c3c;
+    background-color: #282828 !important;
+    margin: 3px;
+    transition: opacity 0.2s ease 0s;
+    border-radius: 9px;
+    opacity: 90%;
+  }
+  .player-inventory-bg {
+    position: absolute;
+    float: left;
+    top: 15%;
+    left: 29.2%;
+    width: 26%;
+    max-width: 25.7%;
+    height: 64.17%;
+    max-height: 64.17%;
+    background: var(--color-primary);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .other-inventory-bg {
+    position: absolute;
+    top: 15%;
+    float: right;
+    right: 26%;
+    margin: 0 auto;
+    width: 19.26%;
+    max-width: 19.26%;
+    height: 64.17%;
+    max-height: 64.17%;
+    background: var(--color-primary);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  #progressbar {
+    width: 85%;
+    margin-left: 92.8%;
+    margin-top: 1.8%;
+    border-radius: 15px;
+    background-color: var(--color-secondary);
+  }
+
+  #progressbar-other {
+    width: 57.2%;
+    margin-left: -6.2%;
+    margin-top: 1.8%;
+    border-radius: 15px;
+    background-color: var(--color-secondary);
+  }
+
+  .inv-options {
+    position: absolute;
+    margin: 8.7% auto;
+    right: -10.6%;
+    height: 4rem;
+    width: 4.3rem;
+    left: 1vh;
+    cursor: pointer; /* Can also be 'none' however, as these are the buttons I feel as the pointer fits better */
+    z-index: 200;
+  }
+
+  .inv-option-item {
+    margin-top: 10%;
+    height: 3rem;
+    width: 4rem;
+    margin-left: 6%;
+    background: var(--color-secondary) !important;
+    border: none;
+    color: white;
+    transition: background-color 0.1s linear;
+    border-radius: 5px !important;
+    opacity: 70%;
+  }
+
+  #player-inv-label {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-family: "Chinese Rocks Rg", sans-serif !important;
+    font-weight: 200;
+    letter-spacing: 0.01vh;
+    right: -93%;
+    float: left;
+    text-transform: normal;
+    cursor: none;
+  }
+
+  #other-inv-label {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-family: "Chinese Rocks Rg", sans-serif !important;
+    font-weight: 200;
+    letter-spacing: 0.01vh;
+    left: -6%;
+    float: left;
+    text-transform: normal;
+    cursor: none;
+  }
+
+  #other-inv-weight {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 200;
+    font-family: "Chinese Rocks Rg", sans-serif !important;
+    letter-spacing: 0.1vh;
+    bottom: 30px;
+    right: 49.5%;
+    float: right;
+    cursor: none;
+  }
+}
+
+.craft-item-slot {
+  width: 30%;
+  height: 30%;
+  background: #0fffd5;
 }

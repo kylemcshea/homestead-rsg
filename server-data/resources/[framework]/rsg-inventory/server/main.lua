@@ -1520,7 +1520,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 					local itemInfo = RSGCore.Shared.Items[fromItemData.name:lower()]
 					exports['rsg-traphouse']:AddHouseItem(traphouseId, toSlot, itemInfo["name"], fromAmount, fromItemData.info, src)
 				else
-					--TriggerClientEvent('QBCore:Notify', src, "You can\'t sell this item..", 'error')
+					--TriggerClientEvent('RSGCore:Notify', src, "You can\'t sell this item..", 'error')
 					RSGCore.Functions.Notify(src, Lang:t("You cant sell this item"), "error")
 				end
 			else
@@ -1552,7 +1552,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				end
 			end
 		else
-			--TriggerClientEvent("QBCore:Notify", src, "You don\'t have this item!", "error")
+			--TriggerClientEvent("RSGCore:Notify", src, "You don\'t have this item!", "error")
 			RSGCore.Functions.Notify(src, Lang:t("You dont have this item"), "error")
 		end
 	elseif RSGCore.Shared.SplitStr(fromInventory, "-")[1] == "otherplayer" then
@@ -1638,7 +1638,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				AddToTrunk(plate, toSlot, fromSlot, itemInfo["name"], fromAmount, fromItemData.info)
 			end
 		else
-			--TriggerClientEvent("QBCore:Notify", src, "Item doesn\'t exist??", "error")
+			--TriggerClientEvent("RSGCore:Notify", src, "Item doesn\'t exist??", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Item doesnt exist"), "error")
 		end
 	elseif RSGCore.Shared.SplitStr(fromInventory, "-")[1] == "glovebox" then
@@ -1681,7 +1681,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				AddToGlovebox(plate, toSlot, fromSlot, itemInfo["name"], fromAmount, fromItemData.info)
 			end
 		else
-			--TriggerClientEvent("QBCore:Notify", src, "Item doesn\'t exist??", "error")
+			--TriggerClientEvent("RSGCore:Notify", src, "Item doesn\'t exist??", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Item doesnt exist"), "error")
 		end
 	elseif RSGCore.Shared.SplitStr(fromInventory, "-")[1] == "stash" then
@@ -1725,7 +1725,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				AddToStash(stashId, toSlot, fromSlot, itemInfo["name"], fromAmount, fromItemData.info)
 			end
 		else
-			--TriggerClientEvent("QBCore:Notify", src, "Item doesn\'t exist??", "error")
+			--TriggerClientEvent("RSGCore:Notify", src, "Item doesn\'t exist??", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Item doesnt exist"), "error")
 		end
 	elseif RSGCore.Shared.SplitStr(fromInventory, "-")[1] == "traphouse" then
@@ -1766,7 +1766,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				exports['rsg-traphouse']:AddHouseItem(traphouseId, toSlot, itemInfo["name"], fromAmount, fromItemData.info, src)
 			end
 		else
-			--TriggerClientEvent("QBCore:Notify", src, "Item doesn't exist??", "error")
+			--TriggerClientEvent("RSGCore:Notify", src, "Item doesn't exist??", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Item doesnt exist"), "error")
 		end
 	elseif RSGCore.Shared.SplitStr(fromInventory, "-")[1] == "itemshop" then
@@ -1850,7 +1850,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				RSGCore.Functions.Notify(src, itemInfo["label"] .. " bought!", "success")
 				TriggerEvent("rsg-log:server:CreateLog", "shops", "Shop item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 			else
-				--TriggerClientEvent('QBCore:Notify', src, "You don\'t have enough cash..", "error")
+				--TriggerClientEvent('RSGCore:Notify', src, "You don\'t have enough cash..", "error")
 				RSGCore.Functions.Notify(src, Lang:t("You dont have enough money"), "error")
 			end
 		end
@@ -1860,7 +1860,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 			TriggerClientEvent("inventory:client:CraftItems", src, itemData.name, itemData.costs, fromAmount, toSlot, itemData.points)
 		else
 			TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
-			--TriggerClientEvent('QBCore:Notify', src, "You don't have the right items..", "error")
+			--TriggerClientEvent('RSGCore:Notify', src, "You don't have the right items..", "error")
 			RSGCore.Functions.Notify(src, Lang:t("You dont have the right materials"), "error")
 		end
 	elseif fromInventory == "attachment_crafting" then
@@ -1869,7 +1869,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 			TriggerClientEvent("inventory:client:CraftAttachment", src, itemData.name, itemData.costs, fromAmount, toSlot, itemData.points)
 		else
 			TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
-			--TriggerClientEvent('QBCore:Notify', src, "You don't have the right items..", "error")
+			--TriggerClientEvent('RSGCore:Notify', src, "You don't have the right items..", "error")
 			RSGCore.Functions.Notify(src, Lang:t("You dont have the right materials"), "error")
 		end
 	else
@@ -1923,7 +1923,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				end
 			end
 		else
-			--TriggerClientEvent("QBCore:Notify", src, "Item doesn't exist??", "error")
+			--TriggerClientEvent("RSGCore:Notify", src, "Item doesn't exist??", "error")
 			RSGCore.Functions.Notify(source, "Item does not exist", 'error')
 		end
 	end
@@ -1970,11 +1970,11 @@ RegisterServerEvent("inventory:server:GiveItem", function(target, name, amount, 
 				TriggerClientEvent("inventory:client:UpdatePlayerInventory", target, false)
 			end
 		else
-			--TriggerClientEvent('QBCore:Notify', src,  "You do not have enough of the item", "error")
+			--TriggerClientEvent('RSGCore:Notify', src,  "You do not have enough of the item", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Not enough Items"), "error")
 		end
 	else
-		--TriggerClientEvent('QBCore:Notify', src, "You do not have enough items to transfer")
+		--TriggerClientEvent('RSGCore:Notify', src, "You do not have enough items to transfer")
 		RSGCore.Functions.Notify(src, Lang:t("Not Enough Items"), "error")
 	end
 end)
@@ -2052,11 +2052,11 @@ RSGCore.Commands.Add("resetinv", "Reset Inventory (Admin Only)", {{name="type", 
 				Stashes[invId].isOpen = false
 			end
 		else
-			--TriggerClientEvent('QBCore:Notify', source,  "Not a valid type..", "error")
+			--TriggerClientEvent('RSGCore:Notify', source,  "Not a valid type..", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Invalid type"), "error")
 		end
 	else
-		--TriggerClientEvent('QBCore:Notify', source,  "Arguments not filled out correctly..", "error")
+		--TriggerClientEvent('RSGCore:Notify', source,  "Arguments not filled out correctly..", "error")
 		RSGCore.Functions.Notify(src, Lang:t("Invalid type"), "error")
 	end
 end, "admin")
@@ -2098,6 +2098,8 @@ RSGCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help=
 					info.lab = exports["rsg-methlab"]:GenerateRandomLab()
 				elseif itemData["name"] == "printerdocument" then
 					info.url = "https://cdn.discordapp.com/attachments/870094209783308299/870104331142189126/Logo_-_Display_Picture_-_Stylized_-_Red.png"
+				elseif RSGCore.Shared.Items[itemData["name"]]["decay"] and RSGCore.Shared.Items[itemData["name"]]["decay"] > 0 then
+					info.quality = 100
 				end
 
 				if AddItem(id, itemData["name"], amount, false, info) then
@@ -2216,4 +2218,171 @@ CreateThread(function()
 		end
 		Wait(60 * 1000)
 	end
+end)
+
+-- Decay System
+
+local TimeAllowed = 60 * 60 * 24 * 1 -- Maths for 1 day dont touch its very important and could break everything
+function ConvertQuality(item)
+	local StartDate = item.created
+    local DecayRate = RSGCore.Shared.Items[item.name:lower()]["decay"] ~= nil and RSGCore.Shared.Items[item.name:lower()]["decay"] or 0.0
+    if DecayRate == nil then
+        DecayRate = 0
+    end
+    local TimeExtra = math.ceil((TimeAllowed * DecayRate))
+    local percentDone = 100 - math.ceil((((os.time() - StartDate) / TimeExtra) * 100))
+    if DecayRate == 0 then
+        percentDone = 100
+    end
+    if percentDone < 0 then
+        percentDone = 0
+    end
+    return percentDone
+end
+
+RSGCore.Functions.CreateCallback('inventory:server:ConvertQuality', function(source, cb, inventory, other)
+    local src = source
+    local data = {}
+    local Player = RSGCore.Functions.GetPlayer(src)
+    for _, item in pairs(inventory) do
+        if item.created then
+            if RSGCore.Shared.Items[item.name:lower()]["decay"] ~= nil or RSGCore.Shared.Items[item.name:lower()]["decay"] ~= 0 then
+                if item.info then
+                    if type(item.info) == "string" then
+                        item.info = {}
+                    end
+                    if item.info.quality == nil then
+                        item.info.quality = 100
+                    end
+                else
+                    local info = {quality = 100}
+                    item.info = info
+                end
+                local quality = ConvertQuality(item)
+                if item.info.quality then
+                    if quality < item.info.quality then
+                        item.info.quality = quality
+                    end
+                else
+                    item.info = {quality = quality}
+                end
+            else
+                if item.info then
+                    item.info.quality = 100
+                else
+                    local info = {quality = 100}
+                    item.info = info
+                end
+            end
+        end
+    end
+    if other then
+		local inventoryType = RSGCore.Shared.SplitStr(other.name, "-")[1]
+		local uniqueId = RSGCore.Shared.SplitStr(other.name, "-")[2]
+		if inventoryType == "trunk" then
+			for _, item in pairs(other.inventory) do
+				if item.created then
+					if RSGCore.Shared.Items[item.name:lower()]["decay"] ~= nil or RSGCore.Shared.Items[item.name:lower()]["decay"] ~= 0 then
+						if item.info then
+							if item.info.quality == nil then
+								item.info.quality = 100
+							end
+						else
+							local info = {quality = 100}
+							item.info = info
+						end
+						local quality = ConvertQuality(item)
+                    	if item.info.quality then
+							if quality < item.info.quality then
+								item.info.quality = quality
+							end
+						else
+							item.info = {quality = quality}
+						end
+					else
+						if item.info then
+							item.info.quality = 100
+						else
+							local info = {quality = 100}
+							item.info = info
+						end
+					end
+				end
+			end
+			Trunks[uniqueId].items = other.inventory
+			TriggerClientEvent("inventory:client:UpdateOtherInventory", Player.PlayerData.source, other.inventory, false)
+		elseif inventoryType == "glovebox" then
+			for _, item in pairs(other.inventory) do
+				if item.created then
+					if RSGCore.Shared.Items[item.name:lower()]["decay"] ~= nil or RSGCore.Shared.Items[item.name:lower()]["decay"] ~= 0 then
+						if item.info then
+							if item.info.quality == nil then
+								item.info.quality = 100
+							end
+						else
+							local info = {quality = 100}
+							item.info = info
+						end
+						local quality = ConvertQuality(item)
+                    	if item.info.quality then
+							if quality < item.info.quality then
+								item.info.quality = quality
+							end
+						else
+							item.info = {quality = quality}
+						end
+					else
+						if item.info then
+							item.info.quality = 100
+						else
+							local info = {quality = 100}
+							item.info = info
+						end
+					end
+				end
+			end
+			Gloveboxes[uniqueId].items = other.inventory
+			TriggerClientEvent("inventory:client:UpdateOtherInventory", Player.PlayerData.source, other.inventory, false)
+		elseif inventoryType == "stash" then
+			for _, item in pairs(other.inventory) do
+				if item.created then
+					if RSGCore.Shared.Items[item.name:lower()]["decay"] ~= nil or RSGCore.Shared.Items[item.name:lower()]["decay"] ~= 0 then
+						if item.info then
+							if type(item.info) == "string" then
+								item.info = {}
+							end
+							if item.info.quality == nil then
+								item.info.quality = 100
+							end
+						else
+							local info = {quality = 100}
+							item.info = info
+						end
+						local quality = ConvertQuality(item)
+						if item.info.quality then
+							if quality < item.info.quality then
+								item.info.quality = quality
+							end
+						else
+							item.info = {quality = quality}
+						end
+					else
+						if item.info then
+							item.info.quality = 100
+						else
+							local info = {quality = 100}
+							item.info = info
+						end
+					end
+				end
+			end
+			Stashes[uniqueId].items = other.inventory
+			TriggerClientEvent("inventory:client:UpdateOtherInventory", Player.PlayerData.source, other.inventory, false)
+		end
+    end
+    Player.Functions.SetInventory(inventory)
+    TriggerClientEvent("inventory:client:UpdatePlayerInventory", Player.PlayerData.source, false)
+    data.inventory = inventory
+    data.other = other
+    cb(data)
 end)
