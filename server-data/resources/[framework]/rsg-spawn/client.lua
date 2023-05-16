@@ -118,7 +118,7 @@ RegisterNUICallback('setCam', function(data)
     end
 end)
 
-RegisterNUICallback('chooseAppa', function(data)
+RegisterNUICallback('chooseApartment', function(data)
     local appaYeet = data.appType
     SetDisplay(false)
     DoScreenFadeOut(500)
