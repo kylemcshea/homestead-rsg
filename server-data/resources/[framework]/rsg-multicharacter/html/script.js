@@ -4,12 +4,12 @@ qbMultiCharacters = {}
 var Loaded = false;
 var NChar = null;
 
-$(document).ready(function (){
+$(document).ready(function () {
     window.addEventListener('message', function (event) {
         var data = event.data;
 
         if (data.action == "ui") {
-			NChar = data.nChar;
+            NChar = data.nChar;
             if (data.toggle) {
                 $('.container').show();
                 $(".welcomescreen").fadeIn(150);
@@ -19,7 +19,7 @@ $(document).ready(function (){
                 var loadingProgress = 0;
                 var loadingDots = 0;
                 $("#loading-text").html(originalText);
-                var DotsInterval = setInterval(function() {
+                var DotsInterval = setInterval(function () {
                     $("#loading-text").append(".");
                     loadingDots++;
                     loadingProgress++;
@@ -35,16 +35,16 @@ $(document).ready(function (){
                         originalText = "Validating characters"
                         $("#loading-text").html(originalText);
                     }
-                    if(loadingDots == 4) {
+                    if (loadingDots == 4) {
                         $("#loading-text").html(originalText);
                         loadingDots = 0;
                     }
                 }, 500);
 
-                setTimeout(function(){
-					setCharactersList()
+                setTimeout(function () {
+                    setCharactersList()
                     $.post('https://rsg-multicharacter/setupCharacters');
-                    setTimeout(function(){
+                    setTimeout(function () {
                         clearInterval(DotsInterval);
                         loadingProgress = 0;
                         originalText = "Retrieving data";
@@ -72,11 +72,11 @@ $(document).ready(function (){
     $('.datepicker').datepicker();
 });
 
-$('.continue-btn').click(function(e){
+$('.continue-btn').click(function (e) {
     e.preventDefault();
 });
 
-$('.disconnect-btn').click(function(e){
+$('.disconnect-btn').click(function (e) {
     e.preventDefault();
 
     $.post('https://rsg-multicharacter/closeUI');
@@ -88,31 +88,31 @@ function setupCharInfo(cData) {
         $('.character-info-valid').html('<span id="no-char">The selected character slot is not in use yet.<br><br>This character doesn\'t have information yet.</span>');
     } else {
         var gender = "Man"
-        if (cData.charinfo.gender == 1) { gender = "Woman" }
+        if (cData.charinfo.gender == "Woman") { gender = "Woman" }
         $('.character-info-valid').html(
-        '<div class="character-info-box"><span id="info-label">Name: </span><span class="char-info-js">'+cData.charinfo.firstname+' '+cData.charinfo.lastname+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Birth date: </span><span class="char-info-js">'+cData.charinfo.birthdate+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Gender: </span><span class="char-info-js">'+gender+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Nationality: </span><span class="char-info-js">'+cData.charinfo.nationality+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Job: </span><span class="char-info-js">'+cData.job.label+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Cash: </span><span class="char-info-js">&#36; '+cData.money.cash+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Bank: </span><span class="char-info-js">&#36; '+cData.money.bank+'</span></div>');
+            '<div class="character-info-box"><span id="info-label">Name: </span><span class="char-info-js">' + cData.charinfo.firstname + ' ' + cData.charinfo.lastname + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Birth date: </span><span class="char-info-js">' + cData.charinfo.birthdate + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Gender: </span><span class="char-info-js">' + gender + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Nationality: </span><span class="char-info-js">' + cData.charinfo.nationality + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Job: </span><span class="char-info-js">' + cData.job.label + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Cash: </span><span class="char-info-js">&#36; ' + cData.money.cash + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Bank: </span><span class="char-info-js">&#36; ' + cData.money.bank + '</span></div>');
     }
 }
 
 function setupCharacters(characters) {
-    $.each(characters, function(index, char){
-        $('#char-'+char.cid).html("");
-        $('#char-'+char.cid).data("citizenid", char.citizenid);
-        setTimeout(function(){
-            $('#char-'+char.cid).html('<span id="slot-name">'+char.charinfo.firstname+' '+char.charinfo.lastname+'<span id="cid">' + char.citizenid + '</span></span>');
-            $('#char-'+char.cid).data('cData', char)
-            $('#char-'+char.cid).data('cid', char.cid)
+    $.each(characters, function (index, char) {
+        $('#char-' + char.cid).html("");
+        $('#char-' + char.cid).data("citizenid", char.citizenid);
+        setTimeout(function () {
+            $('#char-' + char.cid).html('<span id="slot-name">' + char.charinfo.firstname + ' ' + char.charinfo.lastname + '<span id="cid">' + char.citizenid + '</span></span>');
+            $('#char-' + char.cid).data('cData', char)
+            $('#char-' + char.cid).data('cid', char.cid)
         }, 100)
     })
 }
 
-$(document).on('click', '#close-log', function(e){
+$(document).on('click', '#close-log', function (e) {
     e.preventDefault();
     selectedLog = null;
     $('.welcomescreen').css("filter", "none");
@@ -121,7 +121,7 @@ $(document).on('click', '#close-log', function(e){
     logOpen = false;
 });
 
-$(document).on('click', '.character', function(e) {
+$(document).on('click', '.character', function (e) {
     var cDataPed = $(this).data('cData');
     e.preventDefault();
     if (selectedChar === null) {
@@ -130,8 +130,8 @@ $(document).on('click', '.character', function(e) {
             $(selectedChar).addClass("char-selected");
             setupCharInfo('empty')
             $("#play-text").html("Create");
-            $("#play").css({"display":"block"});
-            $("#delete").css({"display":"none"});
+            $("#play").css({ "display": "block" });
+            $("#delete").css({ "display": "none" });
             $.post('https://rsg-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
@@ -140,8 +140,8 @@ $(document).on('click', '.character', function(e) {
             setupCharInfo($(this).data('cData'))
             $("#play-text").html("Play");
             $("#delete-text").html("Delete");
-            $("#play").css({"display":"block"});
-            $("#delete").css({"display":"block"});
+            $("#play").css({ "display": "block" });
+            $("#delete").css({ "display": "block" });
             $.post('https://rsg-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
@@ -153,8 +153,8 @@ $(document).on('click', '.character', function(e) {
             $(selectedChar).addClass("char-selected");
             setupCharInfo('empty')
             $("#play-text").html("Register");
-            $("#play").css({"display":"block"});
-            $("#delete").css({"display":"none"});
+            $("#play").css({ "display": "block" });
+            $("#delete").css({ "display": "none" });
             $.post('https://rsg-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
@@ -163,8 +163,8 @@ $(document).on('click', '.character', function(e) {
             setupCharInfo($(this).data('cData'))
             $("#play-text").html("Play");
             $("#delete-text").html("Delete");
-            $("#play").css({"display":"block"});
-            $("#delete").css({"display":"block"});
+            $("#play").css({ "display": "block" });
+            $("#delete").css({ "display": "block" });
             $.post('https://rsg-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
@@ -190,25 +190,25 @@ function escapeHtml(string) {
 }
 function hasWhiteSpace(s) {
     return /\s/g.test(s);
-  }
+}
 $(document).on('click', '#create', function (e) {
     e.preventDefault();
 
-    let firstname= escapeHtml($('#first_name').val())
-    let lastname= escapeHtml($('#last_name').val())
-    let nationality= escapeHtml($('#nationality').val())
-    let birthdate= escapeHtml($('#birthdate').val())
-    let gender= escapeHtml($('select[name=gender]').val())
+    let firstname = escapeHtml($('#first_name').val())
+    let lastname = escapeHtml($('#last_name').val())
+    let nationality = escapeHtml($('#nationality').val())
+    let birthdate = escapeHtml($('#birthdate').val())
+    let gender = escapeHtml($('select[name=gender]').val())
     let cid = escapeHtml($(selectedChar).attr('id').replace('char-', ''))
     const regTest = new RegExp(profList.join('|'), 'i');
     //An Ugly check of null objects
 
-    if (!firstname || !lastname || !nationality || !birthdate || hasWhiteSpace(firstname) || hasWhiteSpace(lastname)|| hasWhiteSpace(nationality) ){
+    if (!firstname || !lastname || !nationality || !birthdate || hasWhiteSpace(firstname) || hasWhiteSpace(lastname) || hasWhiteSpace(nationality)) {
         console.log("FIELDS REQUIRED")
         return false;
     }
 
-    if(regTest.test(firstname) || regTest.test(lastname)){
+    if (regTest.test(firstname) || regTest.test(lastname)) {
         console.log("ERROR: You used a derogatory/vulgar term. Please try again!")
         return false;
     }
@@ -229,7 +229,7 @@ $(document).on('click', '#create', function (e) {
 
 });
 
-$(document).on('click', '#accept-delete', function(e){
+$(document).on('click', '#accept-delete', function (e) {
     $.post('https://rsg-multicharacter/removeCharacter', JSON.stringify({
         citizenid: $(selectedChar).data("citizenid"),
     }));
@@ -238,7 +238,7 @@ $(document).on('click', '#accept-delete', function(e){
     refreshCharacters();
 });
 
-$(document).on('click', '#cancel-delete', function(e){
+$(document).on('click', '#cancel-delete', function (e) {
     e.preventDefault();
     $('.characters-block').css("filter", "none");
     $('.character-delete').fadeOut(150);
@@ -247,7 +247,7 @@ $(document).on('click', '#cancel-delete', function(e){
 function setCharactersList() {
     var htmlResult = '<div class="character-list-header"><p>My Characters</p></div>'
     for (let i = 1; i <= NChar; i++) {
-        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
+        htmlResult += '<div class="character" id="char-' + i + '" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
     }
     htmlResult += '<div class="character-btn" id="play"><p id="play-text">Select a character</p></div><div class="character-btn" id="delete"><p id="delete-text">Select a character</p></div>'
     $('.characters-list').html(htmlResult)
@@ -256,18 +256,18 @@ function setCharactersList() {
 function refreshCharacters() {
     var htmlResult = ''
     for (let i = 1; i <= NChar; i++) {
-        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
+        htmlResult += '<div class="character" id="char-' + i + '" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
     }
 
     htmlResult += '<div class="character-btn" id="play"><p id="play-text">Select a character</p></div><div class="character-btn" id="delete"><p id="delete-text">Select a character</p></div>'
     $('.characters-list').html(htmlResult)
 
-    setTimeout(function(){
+    setTimeout(function () {
         $(selectedChar).removeClass("char-selected");
         selectedChar = null;
         $.post('https://rsg-multicharacter/setupCharacters');
-        $("#delete").css({"display":"none"});
-        $("#play").css({"display":"none"});
+        $("#delete").css({ "display": "none" });
+        $("#play").css({ "display": "none" });
         qbMultiCharacters.resetAll();
     }, 100)
 }
@@ -285,7 +285,7 @@ $("#close-del").click(function (e) {
     $('.character-delete').fadeOut(150);
 })
 
-$(document).on('click', '#play', function(e) {
+$(document).on('click', '#play', function (e) {
     e.preventDefault();
     var charData = $(selectedChar).data('cid');
 
@@ -294,7 +294,7 @@ $(document).on('click', '#play', function(e) {
             $.post('https://rsg-multicharacter/selectCharacter', JSON.stringify({
                 cData: $(selectedChar).data('cData')
             }));
-            setTimeout(function(){
+            setTimeout(function () {
                 qbMultiCharacters.fadeOutDown('.characters-list', "-40%", 400);
                 qbMultiCharacters.fadeOutDown('.character-info', "-40%", 400);
                 qbMultiCharacters.resetAll();
@@ -307,7 +307,7 @@ $(document).on('click', '#play', function(e) {
     }
 });
 
-$(document).on('click', '#delete', function(e) {
+$(document).on('click', '#delete', function (e) {
     e.preventDefault();
     var charData = $(selectedChar).data('cid');
 
@@ -319,29 +319,29 @@ $(document).on('click', '#delete', function(e) {
     }
 });
 
-qbMultiCharacters.fadeOutUp = function(element, time) {
-    $(element).css({"display":"block"}).animate({top: "-80.5%",}, time, function(){
-        $(element).css({"display":"none"});
+qbMultiCharacters.fadeOutUp = function (element, time) {
+    $(element).css({ "display": "block" }).animate({ top: "-80.5%", }, time, function () {
+        $(element).css({ "display": "none" });
     });
 }
 
-qbMultiCharacters.fadeOutDown = function(element, percent, time) {
+qbMultiCharacters.fadeOutDown = function (element, percent, time) {
     if (percent !== undefined) {
-        $(element).css({"display":"block"}).animate({top: percent,}, time, function(){
-            $(element).css({"display":"none"});
+        $(element).css({ "display": "block" }).animate({ top: percent, }, time, function () {
+            $(element).css({ "display": "none" });
         });
     } else {
-        $(element).css({"display":"block"}).animate({top: "103.5%",}, time, function(){
-            $(element).css({"display":"none"});
+        $(element).css({ "display": "block" }).animate({ top: "103.5%", }, time, function () {
+            $(element).css({ "display": "none" });
         });
     }
 }
 
-qbMultiCharacters.fadeInDown = function(element, percent, time) {
-    $(element).css({"display":"block"}).animate({top: percent,}, time);
+qbMultiCharacters.fadeInDown = function (element, percent, time) {
+    $(element).css({ "display": "block" }).animate({ top: percent, }, time);
 }
 
-qbMultiCharacters.resetAll = function() {
+qbMultiCharacters.resetAll = function () {
     $('.characters-list').hide();
     $('.characters-list').css("top", "-40");
     $('.character-info').hide();
