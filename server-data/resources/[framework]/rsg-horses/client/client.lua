@@ -972,7 +972,20 @@ local function Flee()
     HorseCalled = false
 end
 
-RegisterCommand('dh', Flee() end)
+local FLEE_HORSE_COMMANDS = {
+    'dh',
+    'flee',
+    'fleehorse',
+    'dv',
+    'despawnhorse',
+}
+
+for _, command in ipairs(FLEE_HORSE_COMMANDS) do
+    RegisterCommand(command, function(source, args, raw)
+        Flee()
+    end)
+end
+
 
 RegisterNetEvent("rsg-horses:client:storehorse", function(data)
     if (horsePed ~= 0) then
