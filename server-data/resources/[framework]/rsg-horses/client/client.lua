@@ -972,6 +972,8 @@ local function Flee()
     HorseCalled = false
 end
 
+RegisterCommand('dh', Flee() end)
+
 RegisterNetEvent("rsg-horses:client:storehorse", function(data)
     if (horsePed ~= 0) then
         TriggerServerEvent("rsg-horses:server:SetHoresUnActive", HorseId)
