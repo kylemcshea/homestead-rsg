@@ -1520,7 +1520,6 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 					local itemInfo = RSGCore.Shared.Items[fromItemData.name:lower()]
 					exports['rsg-traphouse']:AddHouseItem(traphouseId, toSlot, itemInfo["name"], fromAmount, fromItemData.info, src)
 				else
-					--TriggerClientEvent('RSGCore:Notify', src, "You can\'t sell this item..", 'error')
 					RSGCore.Functions.Notify(src, Lang:t("You cant sell this item"), "error")
 				end
 			else
@@ -1850,7 +1849,6 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 				RSGCore.Functions.Notify(src, itemInfo["label"] .. " bought!", "success")
 				TriggerEvent("rsg-log:server:CreateLog", "shops", "Shop item bought", "green", "**"..GetPlayerName(src) .. "** bought a " .. itemInfo["label"] .. " for $"..price)
 			else
-				--TriggerClientEvent('RSGCore:Notify', src, "You don\'t have enough cash..", "error")
 				RSGCore.Functions.Notify(src, Lang:t("You dont have enough money"), "error")
 			end
 		end
@@ -1860,7 +1858,6 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 			TriggerClientEvent("inventory:client:CraftItems", src, itemData.name, itemData.costs, fromAmount, toSlot, itemData.points)
 		else
 			TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
-			--TriggerClientEvent('RSGCore:Notify', src, "You don't have the right items..", "error")
 			RSGCore.Functions.Notify(src, Lang:t("You dont have the right materials"), "error")
 		end
 	elseif fromInventory == "attachment_crafting" then
@@ -1869,7 +1866,6 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 			TriggerClientEvent("inventory:client:CraftAttachment", src, itemData.name, itemData.costs, fromAmount, toSlot, itemData.points)
 		else
 			TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
-			--TriggerClientEvent('RSGCore:Notify', src, "You don't have the right items..", "error")
 			RSGCore.Functions.Notify(src, Lang:t("You dont have the right materials"), "error")
 		end
 	else
@@ -1970,11 +1966,9 @@ RegisterServerEvent("inventory:server:GiveItem", function(target, name, amount, 
 				TriggerClientEvent("inventory:client:UpdatePlayerInventory", target, false)
 			end
 		else
-			--TriggerClientEvent('RSGCore:Notify', src,  "You do not have enough of the item", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Not enough Items"), "error")
 		end
 	else
-		--TriggerClientEvent('RSGCore:Notify', src, "You do not have enough items to transfer")
 		RSGCore.Functions.Notify(src, Lang:t("Not Enough Items"), "error")
 	end
 end)
@@ -2052,11 +2046,9 @@ RSGCore.Commands.Add("resetinv", "Reset Inventory (Admin Only)", {{name="type", 
 				Stashes[invId].isOpen = false
 			end
 		else
-			--TriggerClientEvent('RSGCore:Notify', source,  "Not a valid type..", "error")
 			RSGCore.Functions.Notify(src, Lang:t("Invalid type"), "error")
 		end
 	else
-		--TriggerClientEvent('RSGCore:Notify', source,  "Arguments not filled out correctly..", "error")
 		RSGCore.Functions.Notify(src, Lang:t("Invalid type"), "error")
 	end
 end, "admin")
