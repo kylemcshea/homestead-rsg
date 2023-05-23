@@ -23,15 +23,11 @@ Citizen.CreateThread(function()
                 ragdoll = false
             end
             Citizen.Wait(200)
+        end
+        
+        if ragdoll then 
+            ResetPedRagdollTimer(PlayerPedId())
         end  
     end
 end) 
 
-Citizen.CreateThread(function() 
-    while true do 
-        Citizen.Wait(10)
-        if ragdoll then 
-            ResetPedRagdollTimer(PlayerPedId())
-        end
-    end
-end)
