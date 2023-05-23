@@ -15,7 +15,7 @@ local Translations = {
     },
     success = {
         horse_traded = 'Horse has been traded with nearest person',
-        horse_active = 'Horse has been set active call from back by whistling',
+        horse_active = 'Horse has been set active, call from the back by whistling [H]',
         storing_horse = 'Storing your horse',
         horse_sold = 'Horse has been successfully sold',
         horse_owned = 'you now own this horse',
