@@ -965,12 +965,29 @@ end)
 
 -- flee horse
 local function Flee()
+    if (not horseSpawned or horsePed == 0 or not HorseCalled) then return end
+
     TaskAnimalFlee(horsePed, PlayerPedId(), -1)
     Wait(10000)
     DeleteEntity(horsePed)
     horsePed = 0
     HorseCalled = false
 end
+
+local FLEE_HORSE_COMMANDS = {
+    'dh',
+    'flee',
+    'fleehorse',
+    'dv',
+    'despawnhorse',
+}
+
+for _, command in ipairs(FLEE_HORSE_COMMANDS) do
+    RegisterCommand(command, function(source, args, raw)
+        Flee()
+    end)
+end
+
 
 RegisterNetEvent("rsg-horses:client:storehorse", function(data)
     if (horsePed ~= 0) then
